@@ -1,32 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TalendMetadata:DatabaseConnection xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmi:id="_qmxnEIObEeeQ-oyjhyKsAw" DatabaseType="Hive" URL="jdbc:hive2://ip-10-0-0-123.ec2.internal:10000/default" Port="10000" Username="ec2-user" ServerName="ip-10-0-0-123.ec2.internal" SID="default" DbmsId="hive_id" ProductId="HIVE">
-  <parameters xmi:id="_qmxnEYObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_USE_YARN" value="true"/>
-  <parameters xmi:id="_qmxnEoObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_RESOURCEMANAGER_SCHEDULER_ADDRESS" value="ip-10-0-0-123.ec2.internal:8030"/>
-  <parameters xmi:id="_qmxnE4ObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_USE_CUSTOM_CONFS" value="true"/>
-  <parameters xmi:id="_qmxnFIObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_NAME_NODE_URL" value="hdfs://ip-10-0-0-123.ec2.internal:8020"/>
-  <parameters xmi:id="_qmxnFYObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_USERNAME" value="ec2-user"/>
-  <parameters xmi:id="_qmxnFoObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_HADOOP_CLUSTER_ID" value="_UyO8sIObEeeQ-oyjhyKsAw"/>
-  <parameters xmi:id="_qmxnF4ObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_JOB_HISTORY_PRINCIPAL" value="mapred/_HOST@EXAMPLE.COM"/>
-  <parameters xmi:id="_qmxnGIObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_HBASE_VERSION" value="Cloudera_CDH5_8"/>
-  <parameters xmi:id="_qmxnGYObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_JOB_TRACKER_URL" value="ip-10-0-0-123.ec2.internal:8032"/>
-  <parameters xmi:id="_qmxnGoObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_JOBHISTORY_ADDRESS" value="ip-10-0-0-123.ec2.internal:10020"/>
-  <parameters xmi:id="_qmxnG4ObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_HIVE_VERSION" value="Cloudera_CDH5_8"/>
-  <parameters xmi:id="_qmxnHIObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_USE_DATANODE_HOSTNAME" value="true"/>
-  <parameters xmi:id="_qmxnHYObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_DB_SERVER" value="ip-10-0-0-123.ec2.internal"/>
-  <parameters xmi:id="_qmxnHoObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_DB_TYPE" value="Hive"/>
-  <parameters xmi:id="_qmxnH4ObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_MAPRDB_AUTHENTICATION_USE_MAPRTICKET" value="false"/>
-  <parameters xmi:id="_qmxnIIObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_JOB_TRACKER_PRINCIPAL" value="yarn/_HOST@EXAMPLE.COM"/>
-  <parameters xmi:id="_qmxnIYObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_HIVE_DISTRIBUTION" value="CLOUDERA"/>
-  <parameters xmi:id="_qmxnIoObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_MAPRDB_VERSION" value="Cloudera_CDH5_8"/>
-  <parameters xmi:id="_qmxnI4ObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_MAPRDB_DISTRIBUTION" value="CLOUDERA"/>
-  <parameters xmi:id="_qmxnJIObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_USE_KRB" value="false"/>
-  <parameters xmi:id="_qmxnJYObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_HBASE_DISTRIBUTION" value="CLOUDERA"/>
-  <parameters xmi:id="_qmxnJoObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_STAGING_DIRECTORY" value="/user"/>
-  <parameters xmi:id="_qmxnJ4ObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_NAME_NODE_PRINCIPAL" value="hdfs/_HOST@EXAMPLE.COM"/>
-  <parameters xmi:id="_qmxnKIObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_DB_PRODUCT" value="HIVE"/>
-  <parameters xmi:id="_qmxnKYObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_HIVE_AUTHENTICATION_USE_MAPRTICKET" value="false"/>
-  <parameters xmi:id="_qmxnKoObEeeQ-oyjhyKsAw" key="HIVE_AUTHENTICATION_METASTOREURL" value="thrift://ip-10-0-0-123.ec2.internal:9083"/>
-  <parameters xmi:id="_qmxnK4ObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_HBASE_AUTHENTICATION_USE_MAPRTICKET" value="false"/>
-  <parameters xmi:id="_qmxnLIObEeeQ-oyjhyKsAw" key="HIVE_SERVER_VERSION" value="HIVE2"/>
-  <parameters xmi:id="_qmxnLYObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_HIVE_MODE" value="STANDALONE"/>
-</TalendMetadata:DatabaseConnection>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
+  <TalendMetadata:DatabaseConnection xmi:id="_qmxnEIObEeeQ-oyjhyKsAw" dataPackage="_VYCjAIOcEeeQ-oyjhyKsAw" DatabaseType="Hive" URL="jdbc:hive2://ip-10-0-0-123.ec2.internal:10000/default" Port="10000" Username="ec2-user" Password="" ServerName="ip-10-0-0-123.ec2.internal" SID="default" DbmsId="hive_id" ProductId="HIVE" UiSchema="default">
+    <taggedValue xmi:id="_U-FK4IOcEeeQ-oyjhyKsAw" tag="Status" value=""/>
+    <taggedValue xmi:id="_U-FK4YOcEeeQ-oyjhyKsAw" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_U-FK4oOcEeeQ-oyjhyKsAw" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_U-FK44OcEeeQ-oyjhyKsAw" tag="Description" value=""/>
+    <taggedValue xmi:id="_U-FK5IOcEeeQ-oyjhyKsAw" tag="Author" value=""/>
+    <taggedValue xmi:id="_U-FK5YOcEeeQ-oyjhyKsAw" tag="otherParameter"/>
+    <taggedValue xmi:id="_VDTpIIOcEeeQ-oyjhyKsAw" tag="DB ProductName" value="Apache Hive"/>
+    <taggedValue xmi:id="_VDTpIYOcEeeQ-oyjhyKsAw" tag="DB ProductVersion" value="1.1.0-cdh5.12.0"/>
+    <parameters xmi:id="_qmxnEYObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_USE_YARN" value="true"/>
+    <parameters xmi:id="_qmxnEoObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_RESOURCEMANAGER_SCHEDULER_ADDRESS" value="ip-10-0-0-123.ec2.internal:8030"/>
+    <parameters xmi:id="_qmxnE4ObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_USE_CUSTOM_CONFS" value="true"/>
+    <parameters xmi:id="_qmxnFIObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_NAME_NODE_URL" value="hdfs://ip-10-0-0-123.ec2.internal:8020"/>
+    <parameters xmi:id="_qmxnFYObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_USERNAME" value="ec2-user"/>
+    <parameters xmi:id="_qmxnFoObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_HADOOP_CLUSTER_ID" value="_UyO8sIObEeeQ-oyjhyKsAw"/>
+    <parameters xmi:id="_qmxnF4ObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_JOB_HISTORY_PRINCIPAL" value="mapred/_HOST@EXAMPLE.COM"/>
+    <parameters xmi:id="_qmxnGIObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_HBASE_VERSION" value="Cloudera_CDH5_8"/>
+    <parameters xmi:id="_qmxnGYObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_JOB_TRACKER_URL" value="ip-10-0-0-123.ec2.internal:8032"/>
+    <parameters xmi:id="_qmxnGoObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_JOBHISTORY_ADDRESS" value="ip-10-0-0-123.ec2.internal:10020"/>
+    <parameters xmi:id="_qmxnG4ObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_HIVE_VERSION" value="Cloudera_CDH5_8"/>
+    <parameters xmi:id="_qmxnHIObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_USE_DATANODE_HOSTNAME" value="true"/>
+    <parameters xmi:id="_qmxnHYObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_DB_SERVER" value="ip-10-0-0-123.ec2.internal"/>
+    <parameters xmi:id="_qmxnHoObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_DB_TYPE" value="Hive"/>
+    <parameters xmi:id="_qmxnH4ObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_MAPRDB_AUTHENTICATION_USE_MAPRTICKET" value="false"/>
+    <parameters xmi:id="_qmxnIIObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_JOB_TRACKER_PRINCIPAL" value="yarn/_HOST@EXAMPLE.COM"/>
+    <parameters xmi:id="_qmxnIYObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_HIVE_DISTRIBUTION" value="CLOUDERA"/>
+    <parameters xmi:id="_qmxnIoObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_MAPRDB_VERSION" value="Cloudera_CDH5_8"/>
+    <parameters xmi:id="_qmxnI4ObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_MAPRDB_DISTRIBUTION" value="CLOUDERA"/>
+    <parameters xmi:id="_qmxnJIObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_USE_KRB" value="false"/>
+    <parameters xmi:id="_qmxnJYObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_HBASE_DISTRIBUTION" value="CLOUDERA"/>
+    <parameters xmi:id="_qmxnJoObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_STAGING_DIRECTORY" value="/user"/>
+    <parameters xmi:id="_qmxnJ4ObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_NAME_NODE_PRINCIPAL" value="hdfs/_HOST@EXAMPLE.COM"/>
+    <parameters xmi:id="_qmxnKIObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_DB_PRODUCT" value="HIVE"/>
+    <parameters xmi:id="_qmxnKYObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_HIVE_AUTHENTICATION_USE_MAPRTICKET" value="false"/>
+    <parameters xmi:id="_qmxnKoObEeeQ-oyjhyKsAw" key="HIVE_AUTHENTICATION_METASTOREURL" value="thrift://ip-10-0-0-123.ec2.internal:9083"/>
+    <parameters xmi:id="_qmxnK4ObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_HBASE_AUTHENTICATION_USE_MAPRTICKET" value="false"/>
+    <parameters xmi:id="_qmxnLIObEeeQ-oyjhyKsAw" key="HIVE_SERVER_VERSION" value="HIVE2"/>
+    <parameters xmi:id="_qmxnLYObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_HIVE_MODE" value="STANDALONE"/>
+  </TalendMetadata:DatabaseConnection>
+  <orgomg.cwm.resource.relational:Schema xmi:id="_VYCjAIOcEeeQ-oyjhyKsAw" name="default" dataManager="_qmxnEIObEeeQ-oyjhyKsAw">
+    <ownedElement xsi:type="relational:TdTable" xmi:id="_VZLLcIOcEeeQ-oyjhyKsAw" name="rcok" id="_U-A5cIOcEeeQ-oyjhyKsAw" label="rcok" tableType="TABLE">
+      <taggedValue xmi:id="_VZLLcYOcEeeQ-oyjhyKsAw" tag="Comment" value=""/>
+      <feature xsi:type="relational:TdColumn" xmi:id="_VZLLcoOcEeeQ-oyjhyKsAw" name="id" label="id" length="10" sourceType="INT" talendType="id_Integer">
+        <taggedValue xmi:id="_VZLLc4OcEeeQ-oyjhyKsAw" tag="Comment" value=""/>
+        <initialValue xsi:type="relational:TdExpression" xmi:id="_VZLLdIOcEeeQ-oyjhyKsAw" language="COLUMN_DEF"/>
+        <sqlDataType xmi:id="_VZLLdYOcEeeQ-oyjhyKsAw" name="INT" numericPrecisionRadix="10" javaDataType="4" nullable="columnNullable"/>
+      </feature>
+    </ownedElement>
+  </orgomg.cwm.resource.relational:Schema>
+</xmi:XMI>
