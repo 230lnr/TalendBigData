@@ -1,0 +1,140 @@
+package routines;
+
+public class pattern_checks {
+
+	
+	static String stringpattern_email="^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$";
+	static java.util.regex.Pattern pattern_email = java.util.regex.Pattern.compile(stringpattern_email);
+
+	static String stringpattern_phone="(\\+)?([-\\._\\(\\) ]?[\\d]{3,20}[-\\._\\(\\) ]?){2,10}";
+	static java.util.regex.Pattern pattern_phone = java.util.regex.Pattern.compile(stringpattern_phone);
+
+	static String stringpattern_ssn="^[\\d]{3}[-][\\d]{2}[-][\\d]{4}|[\\d]{9}$";
+	static java.util.regex.Pattern pattern_ssn = java.util.regex.Pattern.compile(stringpattern_ssn);
+
+	static String stringpattern_numeric="-?\\d+(\\.\\d+)?";
+	static java.util.regex.Pattern pattern_numeric = java.util.regex.Pattern.compile(stringpattern_numeric);
+	
+
+    /**
+     * isValidEmail: return true or false if the message is a valid email or not.
+     * {talendTypes} String
+     * {Category} User Defined
+     * {param} string("world") input: The string need to be printed.
+     * {example} isValidEmail("world") # hello world !.
+     */
+    public static Boolean isValidEmail(String message) {
+        if (message != null && !("").equals(message)) {
+            try {
+                java.util.regex.Matcher matcher = pattern_email.matcher(message);
+                return matcher.find();
+              } catch(Exception e) {
+                return false;
+              }
+        }else {
+        	return false;	
+        }
+    }
+    
+    /**
+     * isValidPhone: return true or false if the message is a valid phone or not.
+     * {talendTypes} String
+     * {Category} User Defined
+     * {param} string("world") input: The string need to be printed.
+     * {example} isValidPhone("world") # hello world !.
+     */
+    public static Boolean isValidPhone(String message) {
+        if (message != null && !("").equals(message)) {
+            try {
+                java.util.regex.Matcher matcher = pattern_phone.matcher(message);
+                return matcher.find();
+              } catch(Exception e) {
+                return false;
+              }
+        }else {
+        	return false;	
+        }
+    }
+ 
+    /**
+     * isValidSSN: return true or false if the message is a valid phone or not.
+     * {talendTypes} String
+     * {Category} User Defined
+     * {param} string("world") input: The string need to be printed.
+     * {example} isValidSSN("world") # hello world !.
+     */
+    public static Boolean isValidSSN(String message) {
+        if (message != null && !("").equals(message)) {
+            try {
+                java.util.regex.Matcher matcher = pattern_ssn.matcher(message);
+                return matcher.find();
+              } catch(Exception e) {
+                return false;
+              }
+	    }else {
+	    	return false;	
+	    }
+    }
+
+    /**
+     * lengthCheck: return true or false if the message is a string bigger than the length specified
+     * {talendTypes} String
+     * {Category} User Defined
+     * {param} string("world",1) input: The string need to be printed.
+     * {example} lengthCheck("world",1) # hello world !.
+     */
+    public static Boolean lengthCheck(String message, int length) {
+        if (message != null && !("").equals(message)) {
+            if(message.length()>length){
+            	return true;
+            }else{
+            	return false;
+            }
+        } else {
+        	return false;	
+        }
+    }
+    
+    /**
+     * isANumber: return true or false if the message is a string bigger than the length specified
+     * {talendTypes} String
+     * {Category} User Defined
+     * {param} string("world") input: The string need to be printed.
+     * {example} isANumber("world") # hello world !.
+     */
+    public static Boolean isANumber(String message) {
+        if (message != null && !("").equals(message)) {
+            try {
+                java.util.regex.Matcher matcher = pattern_numeric.matcher(message);
+                return matcher.find();
+              } catch(Exception e) {
+                return false;
+              }
+	    }else {
+	    	return false;	
+	    }
+    }
+
+    /**
+     * isANumber: return true or false if the message is a string bigger than the length specified
+     * {talendTypes} String
+     * {Category} User Defined
+     * {param} string("world") input: The string need to be printed.
+     * {example} isANumber("world") # hello world !.
+     */
+    public static Boolean isNumber(String message) {
+    	if (message != null && !("").equals(message)) {
+            try {
+            	Double testDouble = new Double(message);
+            	return true;
+              } catch(Exception e) {
+            	  return false;
+              }
+	    }else {
+	    	return false;	
+	    }
+    }
+}
+
+
+

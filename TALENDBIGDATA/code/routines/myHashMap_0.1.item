@@ -1,0 +1,277 @@
+package routines;
+
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import org.apache.hadoop.fs.*;
+import org.apache.hadoop.conf.*;
+import java.util.*;
+
+/*
+ * user specification: the function's comment should contain keys as follows: 1. write about the function's comment.but
+ * it must be before the "{talendTypes}" key.
+ * 
+ * 2. {talendTypes} 's value must be talend Type, it is required . its value should be one of: String, char | Character,
+ * long | Long, int | Integer, boolean | Boolean, byte | Byte, Date, double | Double, float | Float, Object, short |
+ * Short
+ * 
+ * 3. {Category} define a category for the Function. it is required. its value is user-defined .
+ * 
+ * 4. {param} 's format is: {param} <type>[(<default value or closed list values>)] <name>[ : <comment>]
+ * 
+ * <type> 's value should be one of: string, int, list, double, object, boolean, long, char, date. <name>'s value is the
+ * Function's parameter name. the {param} is optional. so if you the Function without the parameters. the {param} don't
+ * added. you can have many parameters for the Function.
+ * 
+ * 5. {example} gives a example for the Function. it is optional.
+ */
+public class myHashMap {
+
+    /**
+     * Returns a Map of type key,value provided a file with 2 columns (column1: key, column2: value)
+     * 
+     * @param filepath (string): The filepath to the local file system (i.e. /tmp/path/to/file) OR complete hdfs path (i.e. hdfs://server:8020/path/to/file)
+     * @param delim (string): The delimiter to parse the key/value columns
+     * @return map<k,v) 
+     * 
+     * {talendTypes} String
+     * 
+     * {Category} User Defined
+     * 
+     * {param} String filepath
+     * {param} String delimiter
+     * 
+     * {example} BuildHashMap("/path/to/file",";")
+     */
+    public static Map <String,String> BuildHashMap(String filepath, String delim) {
+        
+    	if (filepath == null || "".equals(filepath)) {
+    		return Collections.<String, String>emptyMap();
+    	}
+    	
+    	if (delim == null || "".equals(delim)) {
+    		delim = ",";
+    	}
+    	
+    	Map <String,String> myMap = new HashMap<String,String>();
+
+    	try{
+
+    		Path pt = new Path(filepath);
+    		
+    		FileSystem fs = pt.getFileSystem(new Configuration());
+    		
+    		BufferedReader in = new BufferedReader(new InputStreamReader(fs.open(pt)));
+    		
+    		String line = "";
+
+    		while ((line = in.readLine()) != null) {
+    			if (!line.contains(delim)){
+    				System.out.println("Field delimiter not found in input file: " + filepath + ". Unable to build hashmap.");
+    				in.close();
+    				return Collections.<String, String>emptyMap();
+    			}
+    			String parts[] = line.split(delim);
+    			myMap.put(parts[0],parts[1]);
+    		}
+    		
+    		in.close();
+    		
+        	return myMap;
+    	
+    	}catch(Exception e){
+    		e.printStackTrace();
+    		return Collections.<String, String>emptyMap();
+    	}
+    	
+    }
+    
+    /**
+     * Returns a Map of type key,value provided a file with 2 columns (column1: key, column2: value)
+     * 
+     * @param filepath (string): The filepath to the local file system (i.e. /tmp/path/to/file) OR complete hdfs path (i.e. hdfs://server:8020/path/to/file)
+     * @param delim (string): The delimiter to parse the key/value columns
+     * @param keyPos (Integer): the position of the key column. Starting position is 1.
+     * @param valuePos (Integer): the position of the value column. Starting position is 1.
+     * @return map<k,v) 
+     * 
+     * {talendTypes} String
+     * 
+     * {Category} User Defined
+     * 
+     * {param} String filepath
+     * {param} String delimiter
+     * {param} Integer keyPos
+     * {param} Integer valuePos
+     * 
+     * {example} BuildHashMap("/path/to/file",";",1,2)
+     */    
+    public static Map <String,String> BuildHashMap(String filepath, String delim, Integer keyPos, Integer valuePos) {
+        
+    	if (filepath == null || "".equals(filepath)) {
+    		return null;
+    	}
+    	
+    	if (delim == null || "".equals(delim)) {
+    		delim = ",";
+    	}
+    	
+    	if (keyPos == null) {
+    		keyPos = 0;
+    	}
+    	
+    	if (valuePos == null) {
+    		valuePos = 1;
+    	}
+    	
+    	Map <String,String> myMap = new HashMap<String,String>();
+
+    	try{
+
+    		Path pt = new Path(filepath);
+    		
+    		FileSystem fs = pt.getFileSystem(new Configuration());
+    		
+    		BufferedReader in = new BufferedReader(new InputStreamReader(fs.open(pt)));
+
+    		String line = "";
+
+    		while ((line = in.readLine()) != null) {
+    			if (!line.contains(delim)){
+    				System.out.println("Field delimiter not found in input file: " + filepath + ". Unable to build hashmap.");
+    				in.close();
+    				return null;
+    			}
+    			String parts[] = line.split(delim);
+    			myMap.put(parts[keyPos-1],parts[valuePos-1]);
+    		}
+    		
+    		in.close();
+    		
+        	return myMap;
+    	
+    	}catch(Exception e){
+    		e.printStackTrace();
+    		return null;
+    	}
+    	
+    }
+
+    /**
+     * Returns a Map of type key,value provided a file with 2 columns (column1: key, column2: value)
+     * 
+     * @param filepath (string): The filepath to the local file system (i.e. /tmp/path/to/file) OR complete hdfs path (i.e. hdfs://server:8020/path/to/file)
+     * @param delim (string): The delimiter to parse the key/value columns
+     * @param keyPos (Integer): the position of the key column. Starting position is 1.
+     * @param valuePos (Integer): the position of the value column. Starting position is 1.
+     * @return map<k,v) 
+     * 
+     * {talendTypes} String
+     * 
+     * {Category} User Defined
+     * 
+     * {param} String filepath
+     * {param} String delimiter
+     * {param} Integer keyPos
+     * {param} Integer valuePos
+     * 
+     * {example} BuildHashMap("/path/to/file",";",1,2)
+     */    
+    public static Map <String,String> BuildHashMap(String filepath, String delim, String keyPos, String valuePos) {
+        
+    	if (filepath == null || "".equals(filepath)) {
+    		return null;
+    	}
+    	
+    	if (delim == null || "".equals(delim)) {
+    		delim = ",";
+    	}
+
+    	String keysP[] = keyPos.split(";");
+    	String keysV[] = valuePos.split(";");
+    	
+    	Map <String,String> myMap = new HashMap<String,String>();
+
+    	try{
+
+    		Path pt = new Path(filepath);
+    		
+    		FileSystem fs = pt.getFileSystem(new Configuration());
+    		
+    		BufferedReader in = new BufferedReader(new InputStreamReader(fs.open(pt)));
+
+    		String line = "";
+
+    		while ((line = in.readLine()) != null) {
+    			StringBuffer sbP = new StringBuffer();
+    			StringBuffer sbV = new StringBuffer();
+
+    			if (!line.contains(delim)){
+    				System.out.println("Field delimiter not found in input file: " + filepath + ". Unable to build hashmap.");
+    				in.close();
+    				return null;
+    			}
+    			String parts[] = line.split(delim);
+    			for(int i=0; i< keysP.length; i++){
+    				sbP.append(parts[new Integer(keysP[i])-1]);		
+    				if(i != keysP.length-1){
+    					sbP.append(";");
+    				}
+    			}
+    			for(int j=0; j< keysV.length; j++){
+    				sbV.append(parts[new Integer(keysV[j])-1]);   	
+    				if(j != keysV.length-1){
+    					sbV.append(";");
+    				}
+    			}
+    			myMap.put(sbP.toString(),sbV.toString());
+    		}
+    		in.close();
+    		
+        	return myMap;
+    	
+    	}catch(Exception e){
+    		e.printStackTrace();
+    		return null;
+    	}
+    	
+    }
+    
+    /**
+     * Returns a the lookup value provided a lookup Map Object and a key value 
+     * 
+     * @param lookup (Map Object): The HashMap containing the key,value mapping
+     * @param key (String): The key to return the value for from the HashMap
+     * @return lookup value (String) 
+     * 
+     * {talendTypes} String
+     * 
+     * {Category} User Defined
+     * 
+     * {param} Object lookup
+     * {param} String key
+     * 
+     * {example} getLookupValue(myMap,"NJ")
+     */ 
+    public static String getLookupValue(Object lookup, String key) {
+    
+    	if (lookup == null){
+    		return null;
+    	}
+	
+    	if (key == null) {
+    		return null;
+    	}
+	
+    	Map <String,String> myMap = ((HashMap)lookup);
+	
+    	String resultValue = "";
+
+    	resultValue = ""+myMap.get(key);
+	
+    	return resultValue;
+	
+    }
+
+
+}

@@ -1,0 +1,61 @@
+package routines;
+
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.InputStreamReader;
+import java.util.zip.GZIPInputStream;
+
+import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
+
+/*
+ * user specification: the function's comment should contain keys as follows: 1. write about the function's comment.but
+ * it must be before the "{talendTypes}" key.
+ * 
+ * 2. {talendTypes} 's value must be talend Type, it is required . its value should be one of: String, char | Character,
+ * long | Long, int | Integer, boolean | Boolean, byte | Byte, Date, double | Double, float | Float, Object, short |
+ * Short
+ * 
+ * 3. {Category} define a category for the Function. it is required. its value is user-defined .
+ * 
+ * 4. {param} 's format is: {param} <type>[(<default value or closed list values>)] <name>[ : <comment>]
+ * 
+ * <type> 's value should be one of: string, int, list, double, object, boolean, long, char, date. <name>'s value is the
+ * Function's parameter name. the {param} is optional. so if you the Function without the parameters. the {param} don't
+ * added. you can have many parameters for the Function.
+ * 
+ * 5. {example} gives a example for the Function. it is optional.
+ */
+public class GZip {
+
+	/*    public static String compress(String str) throws Exception {
+        if (str == null || str.length() == 0) {
+            return str;
+        }
+        System.out.println("String length : " + str.length());
+        ByteArrayOutputStream obj=new ByteArrayOutputStream();
+        GZIPOutputStream gzip = new GZIPOutputStream(obj);
+        gzip.write(str.getBytes("UTF-8"));
+        gzip.close();
+        String outStr = obj.toString("UTF-8");
+        System.out.println("Output String length : " + outStr.length());
+        return outStr;
+     }*/
+
+      public static String decompress(String str) throws Exception {
+    	  
+    	  
+    	byte[] bytes = Base64.decode(str);
+        GZIPInputStream gis = new GZIPInputStream(new ByteArrayInputStream(bytes));
+        BufferedReader bf = new BufferedReader(new InputStreamReader(gis, "UTF-8"));
+        StringBuilder builder = new StringBuilder();
+        String outStr = "";
+        String line;
+        while ((line=bf.readLine())!=null) {
+        	//System.out.println("1");
+        	builder.append(line);
+        	builder.append("\n");
+        }
+        outStr = builder.toString();
+        return outStr;
+     }
+}
