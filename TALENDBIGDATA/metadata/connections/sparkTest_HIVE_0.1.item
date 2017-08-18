@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
-  <TalendMetadata:DatabaseConnection xmi:id="_qmxnEIObEeeQ-oyjhyKsAw" dataPackage="_VYCjAIOcEeeQ-oyjhyKsAw" DatabaseType="Hive" URL="jdbc:hive2://ip-10-0-0-123.ec2.internal:10000/default" Port="10000" Username="ec2-user" Password="" ServerName="ip-10-0-0-123.ec2.internal" SID="default" DbmsId="hive_id" ProductId="HIVE" UiSchema="default">
+  <TalendMetadata:DatabaseConnection xmi:id="_qmxnEIObEeeQ-oyjhyKsAw" name="sparkTest_HIVE" id="_qklOsIObEeeQ-oyjhyKsAw" label="sparkTest_HIVE" dataPackage="_VYCjAIOcEeeQ-oyjhyKsAw" DatabaseType="Hive" DriverClass="org.apache.hadoop.hive.jdbc.HiveDriver" URL="jdbc:hive2://ip-10-0-0-123.ec2.internal:10000/default" dbVersionString="STANDALONE" Port="10000" Username="ec2-user" Password="" ServerName="ip-10-0-0-123.ec2.internal" SID="default" SqlSynthax="SQL Syntax" DbmsId="hive_id" ProductId="HIVE" StandardSQL="true" UiSchema="default">
     <taggedValue xmi:id="_U-FK4IOcEeeQ-oyjhyKsAw" tag="Status" value=""/>
     <taggedValue xmi:id="_U-FK4YOcEeeQ-oyjhyKsAw" tag="Version" value="0.1"/>
     <taggedValue xmi:id="_U-FK4oOcEeeQ-oyjhyKsAw" tag="Purpose" value=""/>
@@ -9,6 +9,7 @@
     <taggedValue xmi:id="_U-FK5YOcEeeQ-oyjhyKsAw" tag="otherParameter"/>
     <taggedValue xmi:id="_VDTpIIOcEeeQ-oyjhyKsAw" tag="DB ProductName" value="Apache Hive"/>
     <taggedValue xmi:id="_VDTpIYOcEeeQ-oyjhyKsAw" tag="DB ProductVersion" value="1.1.0-cdh5.12.0"/>
+    <taggedValue xmi:id="_Y_GMYIRkEeezS6F8IG6ywQ" tag="Is Conn Need Reload" value="false"/>
     <parameters xmi:id="_qmxnEYObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_USE_YARN" value="true"/>
     <parameters xmi:id="_qmxnEoObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_RESOURCEMANAGER_SCHEDULER_ADDRESS" value="ip-10-0-0-123.ec2.internal:8030"/>
     <parameters xmi:id="_qmxnE4ObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_USE_CUSTOM_CONFS" value="true"/>
@@ -39,6 +40,17 @@
     <parameters xmi:id="_qmxnLIObEeeQ-oyjhyKsAw" key="HIVE_SERVER_VERSION" value="HIVE2"/>
     <parameters xmi:id="_qmxnLYObEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_HIVE_MODE" value="STANDALONE"/>
     <parameters xmi:id="_QrKKoIRAEeeQ-oyjhyKsAw" key="CONN_PARA_KEY_HADOOP_CUSTOM_JARS"/>
+    <parameters xmi:id="_Y0wkoIRkEeezS6F8IG6ywQ" key="CONN_PARA_KEY_MAPRDB_TABLE_NS_MAPPING" value=""/>
+    <parameters xmi:id="_Y5wZYIRkEeezS6F8IG6ywQ" key="HIVE_AUTHENTICATION_HIVEPRINCIPLA" value=""/>
+    <parameters xmi:id="_Y5wZYYRkEeezS6F8IG6ywQ" key="HIVE_AUTHENTICATION_DRIVERCLASS" value=""/>
+    <parameters xmi:id="_Y5wZYoRkEeezS6F8IG6ywQ" key="HIVE_AUTHENTICATION_USERNAME" value=""/>
+    <parameters xmi:id="_Y5wZY4RkEeezS6F8IG6ywQ" key="HIVE_AUTHENTICATION_PASSWORD" value=""/>
+    <parameters xmi:id="_Y5xAcYRkEeezS6F8IG6ywQ" key="CONN_PARA_KEY_KEYTAB_PRINCIPLA" value=""/>
+    <parameters xmi:id="_Y5xAcoRkEeezS6F8IG6ywQ" key="CONN_PARA_KEY_KEYTAB" value=""/>
+    <parameters xmi:id="_Y5xAc4RkEeezS6F8IG6ywQ" key="HIVE_EXECUTION_ENGINE"/>
+    <parameters xmi:id="_Y6TzAIRkEeezS6F8IG6ywQ" key="CONN_PARA_KEY_USE_SSL" value="false"/>
+    <parameters xmi:id="_ZAukEIRkEeezS6F8IG6ywQ" key="CONN_PARA_KEY_SSL_TRUST_STORE_PATH" value=""/>
+    <parameters xmi:id="_ZAukEYRkEeezS6F8IG6ywQ" key="CONN_PARA_KEY_SSL_TRUST_STORE_PASSWORD" value=""/>
   </TalendMetadata:DatabaseConnection>
   <orgomg.cwm.resource.relational:Schema xmi:id="_VYCjAIOcEeeQ-oyjhyKsAw" name="default" dataManager="_qmxnEIObEeeQ-oyjhyKsAw">
     <ownedElement xsi:type="relational:TdTable" xmi:id="_VZLLcIOcEeeQ-oyjhyKsAw" name="rcok" id="_U-A5cIOcEeeQ-oyjhyKsAw" label="rcok" tableType="TABLE">
