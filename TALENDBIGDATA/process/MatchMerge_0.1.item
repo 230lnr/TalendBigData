@@ -150,7 +150,7 @@
       <elementValue elementRef="Phone" value="&quot;6062718819&quot;"/>
       <elementValue elementRef="Name" value="&quot;Siddarth&quot;"/>
       <elementValue elementRef="Address" value="&quot;16631 N 59th Pl, Scottsdale 85254&quot;"/>
-      <elementValue elementRef="Email" value="&quot;sid@gmail.com&quot;"/>
+      <elementValue elementRef="Email" value="&quot;sid@yahoo.com&quot;"/>
       <elementValue elementRef="Phone" value="&quot;6062718819&quot;"/>
     </elementParameter>
     <elementParameter field="RADIO" name="USE_INLINECONTENT" value="false"/>
@@ -237,16 +237,20 @@
     <nodeData xsi:type="tdqmatching:MatchingData">
       <ruleMatchers>
         <joinkeys>
-          <columnMap key="MATCHING_TYPE" value="Exact"/>
+          <columnMap key="MATCHING_TYPE" value="q-grams"/>
+          <columnMap key="SURVIVORSHIP_FUNCTION" value="Concatenate"/>
           <columnMap key="HANDLE_NULL" value="nullMatchNull"/>
+          <columnMap key="ATTRIBUTE_THRESHOLD" value="1.0"/>
           <columnMap key="CONFIDENCE_WEIGHT" value="1"/>
-          <columnMap key="INPUT_COLUMN" value="Email"/>
+          <columnMap key="INPUT_COLUMN" value="Address"/>
           <columnMap key="CUSTOM_MATCHER" value="&quot;&quot;"/>
           <columnMap key="TOKENIZATION_TYPE" value="No"/>
         </joinkeys>
         <joinkeys>
           <columnMap key="MATCHING_TYPE" value="Jaro-Winkler"/>
+          <columnMap key="SURVIVORSHIP_FUNCTION" value="Concatenate"/>
           <columnMap key="HANDLE_NULL" value="nullMatchNull"/>
+          <columnMap key="ATTRIBUTE_THRESHOLD" value="1.0"/>
           <columnMap key="CONFIDENCE_WEIGHT" value="1"/>
           <columnMap key="INPUT_COLUMN" value="Name"/>
           <columnMap key="CUSTOM_MATCHER" value="&quot;&quot;"/>
