@@ -115,6 +115,7 @@
     <routinesParameter id="_b9xFECGQEeKD7Og2nzf47Q" name="ONS"/>
     <routinesParameter id="_xPLR8A28Eeeeko-1BGw5Uw" name="myHashMap"/>
     <routinesParameter id="_tObsoCEoEeaze_404VPKxA" name="pattern_checks"/>
+    <routinesParameter id="_bSpGYIz2EeeqGY5T0N5I4w" name="DV_DQRULES"/>
   </parameters>
   <node componentName="tMysqlConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="-96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlConnection_1" show="false"/>
@@ -411,8 +412,10 @@
         <mapperTableEntries name="ConsumerSatelite_HasKey" expression="java.util.UUID.nameUUIDFromBytes(Var.ConsumerSatellite_Info.getBytes()).toString() " type="id_String"/>
         <mapperTableEntries name="AddressSatelite_Info" expression="row1.STREET_ADDRESS_1+&quot;&quot;+row1.STREET_ADDRESS_2+&quot;&quot;+row1.CITY+&quot;&quot;+row1.STATE+&quot;&quot;+row1.POSTAL_CODE+&quot;&quot;+row1.COUNTRY_CODE " type="id_String"/>
         <mapperTableEntries name="AddressHub_Satellite_HashKey" expression="java.util.UUID.nameUUIDFromBytes(Var.AddressSatelite_Info.getBytes()).toString() " type="id_String"/>
-        <mapperTableEntries name="PhoneHub_Satelite_HashKey" expression="row1.MOBILE_NUMBER == null || row1.MOBILE_NUMBER.trim().isEmpty()?null:java.util.UUID.nameUUIDFromBytes((row1.MOBILE_NUMBER+&quot;&quot;).getBytes()).toString(); " type="id_String"/>
-        <mapperTableEntries name="EmailHub_Satelite_HashKey" expression="row1.EMAIL_ADDRESS ==null || row1.EMAIL_ADDRESS.trim().isEmpty()?null:java.util.UUID.nameUUIDFromBytes((row1.EMAIL_ADDRESS+&quot;&quot;).getBytes()).toString(); " type="id_String"/>
+        <mapperTableEntries name="Phone" expression="DV_DQRULES.fixPhone_No_TrimCountryCode(row1.MOBILE_NUMBER,row1.COUNTRY_CODE) " type="id_String"/>
+        <mapperTableEntries name="PhoneHub_Satelite_HashKey" expression="row1.MOBILE_NUMBER == null || row1.MOBILE_NUMBER.trim().isEmpty()?null:java.util.UUID.nameUUIDFromBytes(Var.Phone.getBytes()).toString(); " type="id_String"/>
+        <mapperTableEntries name="Email" expression="DV_DQRULES.fixEmail(row1.EMAIL_ADDRESS)" type="id_String"/>
+        <mapperTableEntries name="EmailHub_Satelite_HashKey" expression="row1.EMAIL_ADDRESS ==null || row1.EMAIL_ADDRESS.trim().isEmpty()?null:java.util.UUID.nameUUIDFromBytes(Var.Email.getBytes()).toString(); " type="id_String"/>
       </varTables>
       <outputTables sizeState="INTERMEDIATE" name="ConsumerHub" minimized="true">
         <mapperTableEntries name="ID" expression="row1.ID " type="id_String" nullable="true"/>
