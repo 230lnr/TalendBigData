@@ -460,7 +460,7 @@
         <mapperTableEntries name="Hub_HashKey_1" expression="Var.PhoneHub_Satelite_HashKey " type="id_String"/>
         <mapperTableEntries name="Satelite_HashKey" expression="Var.PhoneHub_Satelite_HashKey " type="id_String"/>
       </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="PhoneSatelite" minimized="true" expressionFilter="Var.PhoneHub_Satelite_HashKey != null">
+      <outputTables sizeState="INTERMEDIATE" name="PhoneSatelite" minimized="true" expressionFilter="Var.PhoneHub_Satelite_HashKey != null" activateExpressionFilter="true">
         <mapperTableEntries name="HashKey" expression="Var.PhoneHub_Satelite_HashKey " type="id_String"/>
         <mapperTableEntries name="MOBILE_NUMBER" expression="row1.MOBILE_NUMBER " type="id_String" nullable="true"/>
         <mapperTableEntries name="DATE_MOBILE_VERIFIED" expression="row1.DATE_MOBILE_VERIFIED " type="id_String" nullable="true"/>
