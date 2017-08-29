@@ -412,7 +412,7 @@
         <mapperTableEntries name="AddressSatelite_Info" expression="row1.STREET_ADDRESS_1+&quot;&quot;+row1.STREET_ADDRESS_2+&quot;&quot;+row1.CITY+&quot;&quot;+row1.STATE+&quot;&quot;+row1.POSTAL_CODE+&quot;&quot;+row1.COUNTRY_CODE " type="id_String"/>
         <mapperTableEntries name="AddressHub_Satellite_HashKey" expression="java.util.UUID.nameUUIDFromBytes(Var.AddressSatelite_Info.getBytes()).toString() " type="id_String"/>
         <mapperTableEntries name="PhoneHub_Satelite_HashKey" expression="row1.MOBILE_NUMBER == null || row1.MOBILE_NUMBER.trim().isEmpty()?null:java.util.UUID.nameUUIDFromBytes((row1.MOBILE_NUMBER+&quot;&quot;).getBytes()).toString(); " type="id_String"/>
-        <mapperTableEntries name="EmailHub_Satelite_HashKey" expression="row1.EMAIL_ADDRESS ==null || row1.EMAIL_ADDRESS.trim().isEmapty()?null:java.util.UUID.nameUUIDFromBytes((row1.EMAIL_ADDRESS+&quot;&quot;).getBytes()).toString(); " type="id_String"/>
+        <mapperTableEntries name="EmailHub_Satelite_HashKey" expression="row1.EMAIL_ADDRESS ==null || row1.EMAIL_ADDRESS.trim().isEmpty()?null:java.util.UUID.nameUUIDFromBytes((row1.EMAIL_ADDRESS+&quot;&quot;).getBytes()).toString(); " type="id_String"/>
       </varTables>
       <outputTables sizeState="INTERMEDIATE" name="ConsumerHub" minimized="true">
         <mapperTableEntries name="ID" expression="row1.ID " type="id_String" nullable="true"/>
