@@ -334,7 +334,7 @@
       <column comment="" key="false" length="50" name="HashKey" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
     </metadata>
     <metadata connector="FLOW" name="AddressLink">
-      <column comment="" key="false" length="50" name="Hub_HashKey_1" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="Hub_HashKey" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="Satellite_HashKey" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
     </metadata>
     <metadata connector="FLOW" name="AddressSatelite">
@@ -363,7 +363,7 @@
       <column comment="" key="false" length="50" name="HashKey" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
     </metadata>
     <metadata connector="FLOW" name="PhoneLink">
-      <column comment="" key="false" length="50" name="Hub_HashKey_1" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="Hub_HashKey" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="Satelite_HashKey" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
     </metadata>
     <metadata connector="FLOW" name="PhoneSatelite">
@@ -440,7 +440,7 @@
         <mapperTableEntries name="HashKey" expression="Var.AddressHub_Satellite_HashKey " type="id_String"/>
       </outputTables>
       <outputTables sizeState="INTERMEDIATE" name="AddressLink" minimized="true">
-        <mapperTableEntries name="Hub_HashKey_1" expression="Var.AddressHub_Satellite_HashKey " type="id_String"/>
+        <mapperTableEntries name="Hub_HashKey" expression="Var.AddressHub_Satellite_HashKey " type="id_String"/>
         <mapperTableEntries name="Satellite_HashKey" expression="Var.AddressHub_Satellite_HashKey " type="id_String"/>
       </outputTables>
       <outputTables sizeState="INTERMEDIATE" name="AddressSatelite" minimized="true">
@@ -457,7 +457,7 @@
         <mapperTableEntries name="HashKey" expression="Var.PhoneHub_Satelite_HashKey " type="id_String"/>
       </outputTables>
       <outputTables sizeState="INTERMEDIATE" name="PhoneLink" minimized="true" expressionFilter="Var.PhoneHub_Satelite_HashKey != null" activateExpressionFilter="true">
-        <mapperTableEntries name="Hub_HashKey_1" expression="Var.PhoneHub_Satelite_HashKey " type="id_String"/>
+        <mapperTableEntries name="Hub_HashKey" expression="Var.PhoneHub_Satelite_HashKey " type="id_String"/>
         <mapperTableEntries name="Satelite_HashKey" expression="Var.PhoneHub_Satelite_HashKey " type="id_String"/>
       </outputTables>
       <outputTables sizeState="INTERMEDIATE" name="PhoneSatelite" minimized="true" expressionFilter="Var.PhoneHub_Satelite_HashKey != null" activateExpressionFilter="true">
@@ -675,7 +675,7 @@
     <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false" show="false"/>
     <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false" show="false"/>
     <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="Hub_HashKey_1"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Hub_HashKey"/>
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Satellite_HashKey"/>
       <elementValue elementRef="LENGTH" value="10"/>
@@ -685,7 +685,7 @@
     <elementParameter field="TEXT" name="LABEL" value="AddressLink"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tLogRow_7">
-      <column comment="" key="false" length="50" name="Hub_HashKey_1" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="Hub_HashKey" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="Satellite_HashKey" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
     </metadata>
   </node>
@@ -786,7 +786,7 @@
     <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false" show="false"/>
     <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false" show="false"/>
     <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="Hub_HashKey_1"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Hub_HashKey"/>
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Satelite_HashKey"/>
       <elementValue elementRef="LENGTH" value="10"/>
@@ -796,7 +796,7 @@
     <elementParameter field="TEXT" name="LABEL" value="PhoneLink"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tLogRow_9">
-      <column comment="" key="false" length="50" name="Hub_HashKey_1" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="Hub_HashKey" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="Satelite_HashKey" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
     </metadata>
   </node>
@@ -1034,6 +1034,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="AddressHub" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="AddressLink" lineStyle="0" metaname="AddressLink" offsetLabelX="0" offsetLabelY="0" outputId="5" source="tMap_1" target="tLogRow_7">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="Hub_HashKey"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="AddressLink" show="false"/>
   </connection>
@@ -1046,6 +1051,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="PhoneHub" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="PhoneLink" lineStyle="0" metaname="PhoneLink" offsetLabelX="0" offsetLabelY="0" outputId="8" source="tMap_1" target="tLogRow_9">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="Hub_HashKey"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="PhoneLink" show="false"/>
   </connection>
