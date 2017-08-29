@@ -411,8 +411,8 @@
         <mapperTableEntries name="ConsumerSatelite_HasKey" expression="java.util.UUID.nameUUIDFromBytes(Var.ConsumerSatellite_Info.getBytes()).toString() " type="id_String"/>
         <mapperTableEntries name="AddressSatelite_Info" expression="row1.STREET_ADDRESS_1+&quot;&quot;+row1.STREET_ADDRESS_2+&quot;&quot;+row1.CITY+&quot;&quot;+row1.STATE+&quot;&quot;+row1.POSTAL_CODE+&quot;&quot;+row1.COUNTRY_CODE " type="id_String"/>
         <mapperTableEntries name="AddressHub_Satellite_HashKey" expression="java.util.UUID.nameUUIDFromBytes(Var.AddressSatelite_Info.getBytes()).toString() " type="id_String"/>
-        <mapperTableEntries name="PhoneHub_Satelite_HashKey" expression="java.util.UUID.nameUUIDFromBytes(row1.EMAIL_ADDRESS.getBytes()).toString(); " type="id_String"/>
-        <mapperTableEntries name="EmailHub_Satelite_HashKey" expression="java.util.UUID.nameUUIDFromBytes(row1.MOBILE_NUMBER.getBytes()).toString(); " type="id_String"/>
+        <mapperTableEntries name="PhoneHub_Satelite_HashKey" expression="row1.MOBILE_NUMBER == null || row1.MOBILE_NUMBER.trim().isEmpty()?null:java.util.UUID.nameUUIDFromBytes((row1.MOBILE_NUMBER+&quot;&quot;).getBytes()).toString(); " type="id_String"/>
+        <mapperTableEntries name="EmailHub_Satelite_HashKey" expression="row1.EMAIL_ADDRESS ==null || row1.EMAIL_ADDRESS.trim().isEmapty()?null:java.util.UUID.nameUUIDFromBytes((row1.EMAIL_ADDRESS+&quot;&quot;).getBytes()).toString(); " type="id_String"/>
       </varTables>
       <outputTables sizeState="INTERMEDIATE" name="ConsumerHub" minimized="true">
         <mapperTableEntries name="ID" expression="row1.ID " type="id_String" nullable="true"/>
@@ -449,41 +449,41 @@
         <mapperTableEntries name="POSTAL_CODE" expression="row1.POSTAL_CODE " type="id_String" nullable="true"/>
         <mapperTableEntries name="COUNTRY_CODE" expression="row1.COUNTRY_CODE " type="id_String" nullable="true"/>
       </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="PhoneHub" minimized="true">
+      <outputTables sizeState="INTERMEDIATE" name="PhoneHub" minimized="true" expressionFilter="Var.PhoneHub_Satelite_HashKey != null" activateExpressionFilter="true">
         <mapperTableEntries name="PhoneID" expression="Var.PhoneHub_Satelite_HashKey " type="id_String"/>
         <mapperTableEntries name="HashKey" expression="Var.PhoneHub_Satelite_HashKey " type="id_String"/>
       </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="PhoneLink" minimized="true">
+      <outputTables sizeState="INTERMEDIATE" name="PhoneLink" minimized="true" expressionFilter="Var.PhoneHub_Satelite_HashKey != null" activateExpressionFilter="true">
         <mapperTableEntries name="Hub_HashKey_1" expression="Var.PhoneHub_Satelite_HashKey " type="id_String"/>
         <mapperTableEntries name="Satelite_HashKey" expression="Var.PhoneHub_Satelite_HashKey " type="id_String"/>
       </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="PhoneSatelite" minimized="true">
+      <outputTables sizeState="INTERMEDIATE" name="PhoneSatelite" minimized="true" expressionFilter="Var.PhoneHub_Satelite_HashKey != null" activateExpressionFilter="true">
         <mapperTableEntries name="HashKey" expression="Var.PhoneHub_Satelite_HashKey " type="id_String"/>
         <mapperTableEntries name="MOBILE_NUMBER" expression="row1.MOBILE_NUMBER " type="id_String" nullable="true"/>
         <mapperTableEntries name="DATE_MOBILE_VERIFIED" expression="row1.DATE_MOBILE_VERIFIED " type="id_String" nullable="true"/>
       </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="EmailHub" minimized="true">
+      <outputTables sizeState="INTERMEDIATE" name="EmailHub" minimized="true" expressionFilter="Var.EmailHub_Satelite_HashKey != null" activateExpressionFilter="true">
         <mapperTableEntries name="EmailID" expression="Var.EmailHub_Satelite_HashKey " type="id_String"/>
         <mapperTableEntries name="HashKey" expression="Var.EmailHub_Satelite_HashKey " type="id_String"/>
       </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="EmailLink" minimized="true">
+      <outputTables sizeState="INTERMEDIATE" name="EmailLink" expressionFilter="Var.EmailHub_Satelite_HashKey != null" activateExpressionFilter="true">
         <mapperTableEntries name="Hub_HashKey" expression="Var.EmailHub_Satelite_HashKey " type="id_String"/>
         <mapperTableEntries name="Satelite_HashKey" expression="Var.EmailHub_Satelite_HashKey " type="id_String"/>
       </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="EmailSatelite" minimized="true">
+      <outputTables sizeState="INTERMEDIATE" name="EmailSatelite" minimized="true" expressionFilter="Var.EmailHub_Satelite_HashKey != null" activateExpressionFilter="true">
         <mapperTableEntries name="HashKey" expression="Var.EmailHub_Satelite_HashKey " type="id_String"/>
         <mapperTableEntries name="EMAIL_ADDRESS" expression="row1.EMAIL_ADDRESS " type="id_String" nullable="true"/>
         <mapperTableEntries name="EMAIL_IS_VERIFIED" expression="row1.EMAIL_IS_VERIFIED " type="id_String" nullable="true"/>
       </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="ConsumerAddressLink">
+      <outputTables sizeState="INTERMEDIATE" name="ConsumerAddressLink" minimized="true">
         <mapperTableEntries name="ConsumerHub_HashKey" expression="Var.ConsumerHub_HashKey " type="id_String"/>
         <mapperTableEntries name="AddressHub_HashKey" expression="Var.AddressHub_Satellite_HashKey " type="id_String"/>
       </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="ConsumerEmailLink">
+      <outputTables sizeState="INTERMEDIATE" name="ConsumerEmailLink" expressionFilter="Var.EmailHub_Satelite_HashKey != null" activateExpressionFilter="true">
         <mapperTableEntries name="ConsumerHub_HashKey" expression="Var.ConsumerHub_HashKey " type="id_String"/>
         <mapperTableEntries name="EmailHub_HashKey" expression="Var.EmailHub_Satelite_HashKey " type="id_String"/>
       </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="ConsumerPhoneLink">
+      <outputTables sizeState="INTERMEDIATE" name="ConsumerPhoneLink" expressionFilter="Var.PhoneHub_Satelite_HashKey != null" activateExpressionFilter="true">
         <mapperTableEntries name="ConsumerHub_HashKey" expression="Var.ConsumerHub_HashKey " type="id_String"/>
         <mapperTableEntries name="PhoneHub_HashKey" expression="Var.PhoneHub_Satelite_HashKey " type="id_String"/>
       </outputTables>
