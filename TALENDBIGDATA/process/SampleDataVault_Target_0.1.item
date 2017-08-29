@@ -450,15 +450,15 @@
         <mapperTableEntries name="MOBILE_NUMBER" expression="row1.MOBILE_NUMBER " type="id_String" nullable="true"/>
         <mapperTableEntries name="DATE_MOBILE_VERIFIED" expression="row1.DATE_MOBILE_VERIFIED " type="id_String" nullable="true"/>
       </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="EmailHub">
+      <outputTables sizeState="INTERMEDIATE" name="EmailHub" minimized="true">
         <mapperTableEntries name="EmailID" expression="Var.EmailHub_Satelite_HashKey " type="id_String"/>
         <mapperTableEntries name="HashKey" expression="Var.EmailHub_Satelite_HashKey " type="id_String"/>
       </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="EmailLink">
+      <outputTables sizeState="INTERMEDIATE" name="EmailLink" minimized="true">
         <mapperTableEntries name="Hub_HashKey" expression="Var.EmailHub_Satelite_HashKey " type="id_String"/>
         <mapperTableEntries name="Satelite_HashKey" expression="Var.EmailHub_Satelite_HashKey " type="id_String"/>
       </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="EmailSatelite">
+      <outputTables sizeState="INTERMEDIATE" name="EmailSatelite" minimized="true">
         <mapperTableEntries name="HashKey" expression="Var.EmailHub_Satelite_HashKey " type="id_String"/>
         <mapperTableEntries name="EMAIL_ADDRESS" expression="row1.EMAIL_ADDRESS " type="id_String" nullable="true"/>
         <mapperTableEntries name="EMAIL_IS_VERIFIED" expression="row1.EMAIL_IS_VERIFIED " type="id_String" nullable="true"/>
