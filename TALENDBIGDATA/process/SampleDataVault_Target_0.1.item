@@ -407,7 +407,7 @@
     <nodeData xsi:type="MapperData">
       <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var">
-        <mapperTableEntries name="ConsumerHub_HashKey" expression="java.util.UUID.nameUUIDFromBytes(row1.ID.getBytes()).toString(); " type="id_String"/>
+        <mapperTableEntries name="ConsumerHub_HashKey" expression="java.util.UUID.nameUUIDFromBytes(row1.ID.getBytes()).toString() " type="id_String"/>
         <mapperTableEntries name="ConsumerSatellite_Info" expression="row1.FIRST_NAME+&quot;&quot;+  row1.MIDDLE_NAME+&quot;&quot;+row1.LAST_NAME+&quot;&quot;+  row1.DATE_OF_BIRTH+&quot;&quot;+row1.GENDER " type="id_String"/>
         <mapperTableEntries name="ConsumerSatelite_HasKey" expression="java.util.UUID.nameUUIDFromBytes(Var.ConsumerSatellite_Info.getBytes()).toString() " type="id_String"/>
         <mapperTableEntries name="AddressSatelite_Info" expression="row1.STREET_ADDRESS_1+&quot;&quot;+row1.STREET_ADDRESS_2+&quot;&quot;+row1.CITY+&quot;&quot;+row1.STATE+&quot;&quot;+row1.POSTAL_CODE+&quot;&quot;+row1.COUNTRY_CODE " type="id_String"/>
