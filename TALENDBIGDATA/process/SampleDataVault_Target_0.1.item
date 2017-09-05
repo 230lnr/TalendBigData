@@ -359,6 +359,8 @@
       <column comment="" key="false" length="50" name="HASH_ALGORITHM" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="50" name="DQ_Status" nullable="true" pattern="" precision="0" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="Stewardship_Status" nullable="true" pattern="" precision="0" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="MapperData">
       <uiProperties shellMaximized="true"/>
@@ -366,25 +368,27 @@
       <outputTables sizeState="INTERMEDIATE" name="Standardized">
         <mapperTableEntries name="MDMLandingId" expression="row5.MDMLandingId" type="id_Integer"/>
         <mapperTableEntries name="ID" expression="row5.ID" type="id_String" nullable="true"/>
-        <mapperTableEntries name="FIRST_NAME" expression="row5.FIRST_NAME" type="id_String" nullable="true"/>
-        <mapperTableEntries name="MIDDLE_NAME" expression="row5.MIDDLE_NAME" type="id_String" nullable="true"/>
-        <mapperTableEntries name="LAST_NAME" expression="row5.LAST_NAME" type="id_String" nullable="true"/>
-        <mapperTableEntries name="DATE_OF_BIRTH" expression="row5.DATE_OF_BIRTH" type="id_String" nullable="true"/>
-        <mapperTableEntries name="EMAIL_ADDRESS" expression="row5.EMAIL_ADDRESS" type="id_String" nullable="true"/>
-        <mapperTableEntries name="STREET_ADDRESS_1" expression="row5.STREET_ADDRESS_1" type="id_String" nullable="true"/>
-        <mapperTableEntries name="STREET_ADDRESS_2" expression="row5.STREET_ADDRESS_2" type="id_String" nullable="true"/>
-        <mapperTableEntries name="CITY" expression="row5.CITY" type="id_String" nullable="true"/>
-        <mapperTableEntries name="STATE" expression="row5.STATE" type="id_String" nullable="true"/>
-        <mapperTableEntries name="POSTAL_CODE" expression="row5.POSTAL_CODE" type="id_String" nullable="true"/>
-        <mapperTableEntries name="COUNTRY_CODE" expression="row5.COUNTRY_CODE" type="id_String" nullable="true"/>
+        <mapperTableEntries name="FIRST_NAME" expression="DV_DQRULES.fixName(row5.FIRST_NAME) " type="id_String" nullable="true"/>
+        <mapperTableEntries name="MIDDLE_NAME" expression="DV_DQRULES.fixName(row5.MIDDLE_NAME)" type="id_String" nullable="true"/>
+        <mapperTableEntries name="LAST_NAME" expression="DV_DQRULES.fixName(row5.LAST_NAME)" type="id_String" nullable="true"/>
+        <mapperTableEntries name="DATE_OF_BIRTH" expression="DV_DQRULES.ConvertBirthDate(row5.DATE_OF_BIRTH) " type="id_String" nullable="true"/>
+        <mapperTableEntries name="EMAIL_ADDRESS" expression="DV_DQRULES.fixEmail(row5.EMAIL_ADDRESS) " type="id_String" nullable="true"/>
+        <mapperTableEntries name="STREET_ADDRESS_1" expression="DV_DQRULES.fixName(row5.STREET_ADDRESS_1) " type="id_String" nullable="true"/>
+        <mapperTableEntries name="STREET_ADDRESS_2" expression="DV_DQRULES.fixName(row5.STREET_ADDRESS_2)" type="id_String" nullable="true"/>
+        <mapperTableEntries name="CITY" expression="DV_DQRULES.fixName(row5.CITY)" type="id_String" nullable="true"/>
+        <mapperTableEntries name="STATE" expression="DV_DQRULES.fixState(DV_DQRULES.fixName(row5.STATE)) " type="id_String" nullable="true"/>
+        <mapperTableEntries name="POSTAL_CODE" expression="DV_DQRULES.fixName(row5.POSTAL_CODE)" type="id_String" nullable="true"/>
+        <mapperTableEntries name="COUNTRY_CODE" expression="DV_DQRULES.fixName(row5.COUNTRY_CODE)" type="id_String" nullable="true"/>
         <mapperTableEntries name="REGION" expression="row5.REGION" type="id_String" nullable="true"/>
-        <mapperTableEntries name="GENDER" expression="row5.GENDER" type="id_String" nullable="true"/>
+        <mapperTableEntries name="GENDER" expression="DV_DQRULES.fixGender(row5.GENDER) " type="id_String" nullable="true"/>
         <mapperTableEntries name="EMAIL_IS_VERIFIED" expression="row5.EMAIL_IS_VERIFIED" type="id_String" nullable="true"/>
-        <mapperTableEntries name="MOBILE_NUMBER" expression="row5.MOBILE_NUMBER" type="id_String" nullable="true"/>
+        <mapperTableEntries name="MOBILE_NUMBER" expression="DV_DQRULES.fixPhone_No_TrimCountryCode(row5.MOBILE_NUMBER, row5.COUNTRY_CODE) " type="id_String" nullable="true"/>
         <mapperTableEntries name="DATE_MOBILE_VERIFIED" expression="row5.DATE_MOBILE_VERIFIED" type="id_String" nullable="true"/>
         <mapperTableEntries name="DATE_CREATED" expression="row5.DATE_CREATED" type="id_String" nullable="true"/>
         <mapperTableEntries name="IS_ACTIVE" expression="row5.IS_ACTIVE" type="id_String" nullable="true"/>
         <mapperTableEntries name="HASH_ALGORITHM" expression="row5.HASH_ALGORITHM" type="id_String" nullable="true"/>
+        <mapperTableEntries name="DQ_Status" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Stewardship_Status" type="id_String" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="row5" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="MDMLandingId" type="id_Integer"/>
@@ -547,6 +551,16 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DQ_Status"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Stewardship_Status"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
@@ -620,6 +634,8 @@
       <column comment="" key="false" length="50" name="HASH_ALGORITHM" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="50" name="DQ_Status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="Stewardship_Status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
       <column comment="" key="true" length="10" name="MDMLandingId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
@@ -685,6 +701,8 @@
       <column comment="" key="false" length="50" name="HASH_ALGORITHM" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="50" name="DQ_Status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="Stewardship_Status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
@@ -918,6 +936,8 @@
         <mapperTableEntries name="DATE_CREATED" type="id_String" nullable="true"/>
         <mapperTableEntries name="IS_ACTIVE" type="id_String" nullable="true"/>
         <mapperTableEntries name="HASH_ALGORITHM" type="id_String" nullable="true"/>
+        <mapperTableEntries name="DQ_Status" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Stewardship_Status" type="id_String" nullable="true"/>
       </inputTables>
     </nodeData>
   </node>
@@ -1743,6 +1763,12 @@
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
       <elementValue elementRef="TRACE_COLUMN" value="COUNTRY_CODE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="Stewardship_Status"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="DQ_Status"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
