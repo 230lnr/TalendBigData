@@ -380,7 +380,7 @@
         <mapperTableEntries name="COUNTRY_CODE" expression=" DV_DQRULES.fixCountry(row5.COUNTRY_CODE)" type="id_String"/>
         <mapperTableEntries name="GENDER" expression="DV_DQRULES.fixGender(row5.GENDER) " type="id_String"/>
         <mapperTableEntries name="MOBILE_NUMBER" expression="DV_DQRULES.fixPhone_No_TrimCountryCode(row5.MOBILE_NUMBER, row5.COUNTRY_CODE) " type="id_String"/>
-        <mapperTableEntries name="var1" type="id_String"/>
+        <mapperTableEntries name="DQIssue" expression="DV_DQRULES.validateEmail()" type="id_String"/>
         <mapperTableEntries name="var2" type="id_String"/>
         <mapperTableEntries name="var3" type="id_String"/>
       </varTables>
