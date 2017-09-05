@@ -380,9 +380,7 @@
         <mapperTableEntries name="COUNTRY_CODE" expression=" DV_DQRULES.fixCountry(row5.COUNTRY_CODE)" type="id_String"/>
         <mapperTableEntries name="GENDER" expression="DV_DQRULES.fixGender(row5.GENDER) " type="id_String"/>
         <mapperTableEntries name="MOBILE_NUMBER" expression="DV_DQRULES.fixPhone_No_TrimCountryCode(row5.MOBILE_NUMBER, row5.COUNTRY_CODE) " type="id_String"/>
-        <mapperTableEntries name="DQIssue" expression="DV_DQRULES.validateEmail()" type="id_String"/>
-        <mapperTableEntries name="var2" type="id_String"/>
-        <mapperTableEntries name="var3" type="id_String"/>
+        <mapperTableEntries name="DQIssue" expression="DV_DQRULES.validateEmailAddress(Var.EMAIL_ADDRESS) " type="id_String"/>
       </varTables>
       <outputTables sizeState="INTERMEDIATE" name="Standardized">
         <mapperTableEntries name="MDMLandingId" expression="row5.MDMLandingId" type="id_Integer"/>
@@ -407,8 +405,8 @@
         <mapperTableEntries name="DATE_CREATED" expression="row5.DATE_CREATED" type="id_String" nullable="true"/>
         <mapperTableEntries name="IS_ACTIVE" expression="row5.IS_ACTIVE" type="id_String" nullable="true"/>
         <mapperTableEntries name="HASH_ALGORITHM" expression="row5.HASH_ALGORITHM" type="id_String" nullable="true"/>
-        <mapperTableEntries name="DQ_Status" type="id_String" nullable="true"/>
-        <mapperTableEntries name="Stewardship_Status" type="id_String" nullable="true"/>
+        <mapperTableEntries name="DQ_Status" expression="Var.DQIssue " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Stewardship_Status" expression="null" type="id_String" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="row5" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="MDMLandingId" type="id_Integer"/>
