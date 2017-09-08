@@ -336,7 +336,7 @@
 							return null;
 						}
 						
-						Name=Name.replace("\"", "").trim().toUpperCase().replace("%26AMP;", "&").replace("%26AMP", "&").replace("_", " ").replace("", "");
+						Name=Name.replace("\"", "").trim().replace("%26AMP;", "&").replace("%26amp", "&").replace("_", " ").replace("", "");
 						
 						while(Name.length()>1 && Name.substring(0, 1).equalsIgnoreCase("*")){
 							Name=Name.substring(1).trim();
