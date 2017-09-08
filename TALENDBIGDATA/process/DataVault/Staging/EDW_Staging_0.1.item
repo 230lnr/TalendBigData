@@ -178,7 +178,7 @@
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="edw_consumer_landing" name="tMysqlInput_2">
-      <column comment="" key="false" length="10" name="MDM_LandingID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+      <column comment="" key="true" length="10" name="MDM_LandingID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="10" name="ID" nullable="true" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
@@ -277,7 +277,7 @@
       <column comment="" key="false" length="50" name="Stewardship_Status" nullable="true" pattern="" precision="0" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var">
         <mapperTableEntries name="Name" expression="DV_DQRULES.fixName(row1.Name) " type="id_String"/>
         <mapperTableEntries name="DATE_OF_BIRTH" expression="DV_DQRULES.ConvertBirthDate(row1.BirthDate) " type="id_Date"/>
