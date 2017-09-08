@@ -488,6 +488,9 @@
       <column comment="" key="false" length="50" name="POSTAL_CODE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="20" name="ZIP_EXTENTION" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="50" name="COUNTRY_CODE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -540,57 +543,58 @@
         <mapperTableEntries name="HashKey" expression="Var.ConsumerHub_HashKey " type="id_String"/>
         <mapperTableEntries name="DataloadID" expression="TalendDate.getDate(&quot;CCYYMMDDhhmmss&quot;)+&quot;|Ecomm&quot;+Var.ConsumerHub_HashKey " type="id_String" nullable="true"/>
         <mapperTableEntries name="RecordSource" expression="&quot;Ecomm&quot;" type="id_String" nullable="true"/>
-        <mapperTableEntries name="deleted" expression="row1.IS_ACTIVE != null ?row1.IS_ACTIVE.trim().equals(&quot;1&quot;):false " type="id_Boolean" nullable="true"/>
+        <mapperTableEntries name="deleted" expression="false " type="id_Boolean" nullable="true"/>
       </outputTables>
       <outputTables sizeState="INTERMEDIATE" name="ConsumerLink" minimized="true">
         <mapperTableEntries name="Hub_HashKey" expression="Var.ConsumerHub_HashKey " type="id_String"/>
         <mapperTableEntries name="Satelite_HasKey" expression="Var.ConsumerSatelite_HasKey " type="id_String"/>
       </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="ConsumerSatelite" minimized="true">
+      <outputTables sizeState="INTERMEDIATE" name="ConsumerSatelite">
         <mapperTableEntries name="HasKey" expression="Var.ConsumerSatelite_HasKey " type="id_String"/>
-        <mapperTableEntries name="FIRST_NAME" expression="row1.FIRST_NAME " type="id_String" nullable="true"/>
-        <mapperTableEntries name="MIDDLE_NAME" expression="row1.MIDDLE_NAME " type="id_String" nullable="true"/>
-        <mapperTableEntries name="LAST_NAME" expression="row1.LAST_NAME " type="id_String" nullable="true"/>
-        <mapperTableEntries name="DATE_OF_BIRTH" expression="row1.DATE_OF_BIRTH " type="id_String" nullable="true"/>
-        <mapperTableEntries name="GENDER" expression="row1.GENDER " type="id_String" nullable="true"/>
-        <mapperTableEntries name="DATE_CREATED" expression="row1.DATE_CREATED " type="id_String" nullable="true"/>
-        <mapperTableEntries name="IS_ACTIVE" expression="row1.IS_ACTIVE " type="id_String" nullable="true"/>
+        <mapperTableEntries name="FIRST_NAME" expression="row1.Name" type="id_String" nullable="true"/>
+        <mapperTableEntries name="MIDDLE_NAME" expression="null" type="id_String" nullable="true"/>
+        <mapperTableEntries name="LAST_NAME" expression="null" type="id_String" nullable="true"/>
+        <mapperTableEntries name="DATE_OF_BIRTH" expression="null" type="id_String" nullable="true"/>
+        <mapperTableEntries name="GENDER" expression="null" type="id_String" nullable="true"/>
+        <mapperTableEntries name="DATE_CREATED" expression="null" type="id_String" nullable="true"/>
+        <mapperTableEntries name="IS_ACTIVE" expression="null" type="id_String" nullable="true"/>
       </outputTables>
       <outputTables sizeState="INTERMEDIATE" name="AddressHub">
         <mapperTableEntries name="AddressID" expression="Var.AddressHub_Satellite_HashKey " type="id_String"/>
         <mapperTableEntries name="HashKey" expression="Var.AddressHub_Satellite_HashKey " type="id_String"/>
         <mapperTableEntries name="DataloadID" expression="TalendDate.getDate(&quot;CCYYMMDDhhmmss&quot;)+&quot;|Ecomm&quot;+Var.AddressHub_Satellite_HashKey " type="id_String" nullable="true"/>
         <mapperTableEntries name="RecordSource" expression="&quot;Ecomm&quot;" type="id_String" nullable="true"/>
-        <mapperTableEntries name="deleted" expression="row1.IS_ACTIVE != null ?row1.IS_ACTIVE.trim().equals(&quot;1&quot;):false" type="id_Boolean" nullable="true"/>
+        <mapperTableEntries name="deleted" expression="false " type="id_Boolean" nullable="true"/>
       </outputTables>
       <outputTables sizeState="INTERMEDIATE" name="AddressLink" minimized="true">
         <mapperTableEntries name="Hub_HashKey" expression="Var.AddressHub_Satellite_HashKey " type="id_String"/>
         <mapperTableEntries name="Satellite_HashKey" expression="Var.AddressHub_Satellite_HashKey " type="id_String"/>
       </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="AddressSatelite" minimized="true">
+      <outputTables sizeState="INTERMEDIATE" name="AddressSatelite">
         <mapperTableEntries name="HashKey" expression="Var.AddressHub_Satellite_HashKey " type="id_String"/>
-        <mapperTableEntries name="STREET_ADDRESS_1" expression="row1.STREET_ADDRESS_1 " type="id_String" nullable="true"/>
-        <mapperTableEntries name="STREET_ADDRESS_2" expression="row1.STREET_ADDRESS_2 " type="id_String" nullable="true"/>
-        <mapperTableEntries name="CITY" expression="row1.CITY " type="id_String" nullable="true"/>
-        <mapperTableEntries name="STATE" expression="row1.STATE " type="id_String" nullable="true"/>
-        <mapperTableEntries name="POSTAL_CODE" expression="row1.POSTAL_CODE " type="id_String" nullable="true"/>
-        <mapperTableEntries name="COUNTRY_CODE" expression="row1.COUNTRY_CODE " type="id_String" nullable="true"/>
+        <mapperTableEntries name="STREET_ADDRESS_1" expression="row1.Address " type="id_String" nullable="true"/>
+        <mapperTableEntries name="STREET_ADDRESS_2" expression="" type="id_String" nullable="true"/>
+        <mapperTableEntries name="CITY" expression="row1.City" type="id_String" nullable="true"/>
+        <mapperTableEntries name="STATE" expression="row1.State" type="id_String" nullable="true"/>
+        <mapperTableEntries name="POSTAL_CODE" expression="row1.Zip" type="id_String" nullable="true"/>
+        <mapperTableEntries name="ZIP_EXTENTION" expression="row1.Zip_Extn " type="id_String" nullable="true"/>
+        <mapperTableEntries name="COUNTRY_CODE" expression="row1.Country" type="id_String" nullable="true"/>
       </outputTables>
       <outputTables sizeState="INTERMEDIATE" name="EmailHub" expressionFilter="Var.EmailHub_Satelite_HashKey != null">
         <mapperTableEntries name="EmailID" expression="Var.EmailHub_Satelite_HashKey " type="id_String"/>
         <mapperTableEntries name="HashKey" expression="Var.EmailHub_Satelite_HashKey " type="id_String"/>
         <mapperTableEntries name="DataloadID" expression="TalendDate.getDate(&quot;CCYYMMDDhhmmss&quot;)+&quot;|Ecomm&quot;+Var.EmailHub_Satelite_HashKey " type="id_String" nullable="true"/>
         <mapperTableEntries name="RecordSource" expression="&quot;Ecomm&quot;" type="id_String" nullable="true"/>
-        <mapperTableEntries name="deleted" expression="row1.IS_ACTIVE != null ?row1.IS_ACTIVE.trim().equals(&quot;1&quot;):false" type="id_Boolean" nullable="true"/>
+        <mapperTableEntries name="deleted" expression="false " type="id_Boolean" nullable="true"/>
       </outputTables>
       <outputTables sizeState="INTERMEDIATE" name="EmailLink" minimized="true" expressionFilter="Var.EmailHub_Satelite_HashKey != null" activateExpressionFilter="true">
         <mapperTableEntries name="Hub_HashKey" expression="Var.EmailHub_Satelite_HashKey " type="id_String"/>
         <mapperTableEntries name="Satelite_HashKey" expression="Var.EmailHub_Satelite_HashKey " type="id_String"/>
       </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="EmailSatelite" minimized="true" expressionFilter="Var.EmailHub_Satelite_HashKey != null">
+      <outputTables sizeState="INTERMEDIATE" name="EmailSatelite" expressionFilter="Var.EmailHub_Satelite_HashKey != null">
         <mapperTableEntries name="HashKey" expression="Var.EmailHub_Satelite_HashKey " type="id_String"/>
-        <mapperTableEntries name="EMAIL_ADDRESS" expression="row1.EMAIL_ADDRESS " type="id_String" nullable="true"/>
-        <mapperTableEntries name="EMAIL_IS_VERIFIED" expression="row1.EMAIL_IS_VERIFIED " type="id_String" nullable="true"/>
+        <mapperTableEntries name="EMAIL_ADDRESS" expression="row1.Email1" type="id_String" nullable="true"/>
+        <mapperTableEntries name="EMAIL_IS_VERIFIED" expression="null" type="id_String" nullable="true"/>
       </outputTables>
       <outputTables sizeState="INTERMEDIATE" name="ConsumerAddressLink" minimized="true">
         <mapperTableEntries name="ConsumerHub_HashKey" expression="Var.ConsumerHub_HashKey " type="id_String"/>
@@ -1132,6 +1136,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ZIP_EXTENTION"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="COUNTRY_CODE"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -1163,6 +1172,9 @@
       <column comment="" key="false" length="50" name="POSTAL_CODE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="20" name="ZIP_EXTENTION" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="50" name="COUNTRY_CODE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1182,6 +1194,9 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="50" name="POSTAL_CODE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="20" name="ZIP_EXTENTION" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="50" name="COUNTRY_CODE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -1843,6 +1858,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="AddressLink" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="AddressSatelite" lineStyle="0" metaname="AddressSatelite" offsetLabelX="0" offsetLabelY="0" outputId="6" source="tMap_1" target="tMysqlOutput_6">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="ZIP_EXTENTION"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="AddressSatelite" show="false"/>
   </connection>
