@@ -375,6 +375,9 @@
       <column comment="" key="false" length="50" name="POSTAL_CODE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="0" name="ZIP_EXTENTION" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="50" name="COUNTRY_CODE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -476,13 +479,14 @@
         <mapperTableEntries name="Hub_HashKey" expression="Var.AddressHub_Satellite_HashKey " type="id_String"/>
         <mapperTableEntries name="Satellite_HashKey" expression="Var.AddressHub_Satellite_HashKey " type="id_String"/>
       </outputTables>
-      <outputTables sizeState="INTERMEDIATE" name="AddressSatelite" minimized="true">
+      <outputTables sizeState="INTERMEDIATE" name="AddressSatelite">
         <mapperTableEntries name="HashKey" expression="Var.AddressHub_Satellite_HashKey " type="id_String"/>
         <mapperTableEntries name="STREET_ADDRESS_1" expression="row1.STREET_ADDRESS_1 " type="id_String" nullable="true"/>
         <mapperTableEntries name="STREET_ADDRESS_2" expression="row1.STREET_ADDRESS_2 " type="id_String" nullable="true"/>
         <mapperTableEntries name="CITY" expression="row1.CITY " type="id_String" nullable="true"/>
         <mapperTableEntries name="STATE" expression="row1.STATE " type="id_String" nullable="true"/>
         <mapperTableEntries name="POSTAL_CODE" expression="row1.POSTAL_CODE " type="id_String" nullable="true"/>
+        <mapperTableEntries name="ZIP_EXTENTION" expression="row1.ZIP_EXTENTION " type="id_String" nullable="true"/>
         <mapperTableEntries name="COUNTRY_CODE" expression="row1.COUNTRY_CODE " type="id_String" nullable="true"/>
       </outputTables>
       <outputTables sizeState="INTERMEDIATE" name="PhoneHub" expressionFilter="Var.PhoneHub_Satelite_HashKey != null" activateExpressionFilter="true">
@@ -1039,6 +1043,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ZIP_EXTENTION"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="COUNTRY_CODE"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
@@ -1070,6 +1079,9 @@
       <column comment="" key="false" length="50" name="POSTAL_CODE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="0" name="ZIP_EXTENTION" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="50" name="COUNTRY_CODE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1089,6 +1101,9 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="50" name="POSTAL_CODE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="0" name="ZIP_EXTENTION" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="50" name="COUNTRY_CODE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -1770,6 +1785,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="AddressLink" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="AddressSatelite" lineStyle="0" metaname="AddressSatelite" offsetLabelX="0" offsetLabelY="0" outputId="6" source="tMap_1" target="tMysqlOutput_6">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="ZIP_EXTENTION"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="AddressSatelite" show="false"/>
   </connection>
