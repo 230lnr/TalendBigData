@@ -272,7 +272,7 @@
       <column comment="" key="false" length="19" name="LandedDt" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="20" name="Zip_Extn" nullable="false" pattern="" precision="-1" sourceType="" type="id_String" originalLength="20" usefulColumn="true"/>
+      <column comment="" key="false" length="20" name="Zip_Extn" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="20" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="DQ_Status" nullable="true" pattern="" precision="0" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="Stewardship_Status" nullable="true" pattern="" precision="0" sourceType="" type="id_String" originalLength="50" usefulColumn="true"/>
     </metadata>
@@ -305,7 +305,7 @@
         <mapperTableEntries name="BirthDate" expression="Var.DATE_OF_BIRTH " type="id_Date" nullable="true"/>
         <mapperTableEntries name="Gender" expression="Var.GENDER " type="id_String" nullable="true"/>
         <mapperTableEntries name="LandedDt" expression="row1.LandedDt " type="id_Date" nullable="true"/>
-        <mapperTableEntries name="Zip_Extn" expression="Var.ZIP_EXTENTION " type="id_String"/>
+        <mapperTableEntries name="Zip_Extn" expression="Var.ZIP_EXTENTION " type="id_String" nullable="true"/>
         <mapperTableEntries name="DQ_Status" expression="Var.DQIssue " type="id_String" nullable="true"/>
         <mapperTableEntries name="Stewardship_Status" expression="null" type="id_String" nullable="true"/>
       </outputTables>
@@ -486,7 +486,7 @@
       <column comment="" key="false" length="19" name="LandedDt" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="20" name="Zip_Extn" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="20" usefulColumn="true"/>
+      <column comment="" key="false" length="20" name="Zip_Extn" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="20" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="DQ_Status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="Stewardship_Status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
     </metadata>
@@ -530,7 +530,7 @@
       <column comment="" key="false" length="19" name="LandedDt" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="20" name="Zip_Extn" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="20" usefulColumn="true"/>
+      <column comment="" key="false" length="20" name="Zip_Extn" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="20" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="DQ_Status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column comment="" key="false" length="50" name="Stewardship_Status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="50" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
