@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
+<talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.talend.org/mapper" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
   <context confirmationNeeded="false" name="Default"/>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="0" show="false"/>
@@ -275,73 +275,19 @@
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="224">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_1" show="false"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" value="true" show="false"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" value="false" show="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" value="false" show="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="MDMLandingId"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ID"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="FIRST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="MIDDLE_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="LAST_NAME"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="DATE_OF_BIRTH"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="EMAIL_ADDRESS"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="STREET_ADDRESS_1"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="STREET_ADDRESS_2"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CITY"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="STATE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="POSTAL_CODE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ZIP_EXTENTION"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="COUNTRY_CODE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="REGION"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="GENDER"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="EMAIL_IS_VERIFIED"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="MOBILE_NUMBER"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="DATE_MOBILE_VERIFIED"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="DATE_CREATED"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IS_ACTIVE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="HASH_ALGORITHM"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="DQ_Status"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Stewardship_Status"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="288" posY="224">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_1" show="false"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_RPogYJKIEeey6Z5VICdvYg-tMap_1-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true" show="false"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" value="false" show="false"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="consumer_staging" name="tLogRow_1">
+    <metadata connector="FLOW" name="Stewardship">
       <column comment="" key="true" length="10" name="MDMLandingId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -414,7 +360,278 @@
       <column comment="" key="false" length="50" name="Stewardship_Status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="-1" name="Source" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="istarget" nullable="true" pattern="" precision="-1" sourceType="" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="FLOW" label="consumer_staging" name="DB_Status">
+      <column comment="" key="true" length="10" name="MDMLandingId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="Stewardship_Status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <additionalProperties key="Comment" value=""/>
+    </metadata>
+    <nodeData xsi:type="MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
+      <outputTables sizeState="INTERMEDIATE" name="Stewardship">
+        <mapperTableEntries name="MDMLandingId" expression="row1.MDMLandingId " type="id_Integer"/>
+        <mapperTableEntries name="ID" expression="row1.ID " type="id_String" nullable="true"/>
+        <mapperTableEntries name="FIRST_NAME" expression="row1.FIRST_NAME " type="id_String" nullable="true"/>
+        <mapperTableEntries name="MIDDLE_NAME" expression="row1.MIDDLE_NAME " type="id_String" nullable="true"/>
+        <mapperTableEntries name="LAST_NAME" expression="row1.LAST_NAME " type="id_String" nullable="true"/>
+        <mapperTableEntries name="DATE_OF_BIRTH" expression="row1.DATE_OF_BIRTH " type="id_Date" nullable="true"/>
+        <mapperTableEntries name="EMAIL_ADDRESS" expression="row1.EMAIL_ADDRESS " type="id_String" nullable="true"/>
+        <mapperTableEntries name="STREET_ADDRESS_1" expression="row1.STREET_ADDRESS_1 " type="id_String" nullable="true"/>
+        <mapperTableEntries name="STREET_ADDRESS_2" expression="row1.STREET_ADDRESS_2 " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CITY" expression="row1.CITY " type="id_String" nullable="true"/>
+        <mapperTableEntries name="STATE" expression="row1.STATE " type="id_String" nullable="true"/>
+        <mapperTableEntries name="POSTAL_CODE" expression="row1.POSTAL_CODE " type="id_String" nullable="true"/>
+        <mapperTableEntries name="ZIP_EXTENTION" expression="row1.ZIP_EXTENTION " type="id_String" nullable="true"/>
+        <mapperTableEntries name="COUNTRY_CODE" expression="row1.COUNTRY_CODE " type="id_String" nullable="true"/>
+        <mapperTableEntries name="REGION" expression="row1.REGION " type="id_String" nullable="true"/>
+        <mapperTableEntries name="GENDER" expression="row1.GENDER " type="id_String" nullable="true"/>
+        <mapperTableEntries name="EMAIL_IS_VERIFIED" expression="row1.EMAIL_IS_VERIFIED " type="id_String" nullable="true"/>
+        <mapperTableEntries name="MOBILE_NUMBER" expression="row1.MOBILE_NUMBER " type="id_String" nullable="true"/>
+        <mapperTableEntries name="DATE_MOBILE_VERIFIED" expression="row1.DATE_MOBILE_VERIFIED " type="id_String" nullable="true"/>
+        <mapperTableEntries name="DATE_CREATED" expression="row1.DATE_CREATED " type="id_String" nullable="true"/>
+        <mapperTableEntries name="IS_ACTIVE" expression="row1.IS_ACTIVE " type="id_String" nullable="true"/>
+        <mapperTableEntries name="HASH_ALGORITHM" expression="row1.HASH_ALGORITHM " type="id_String" nullable="true"/>
+        <mapperTableEntries name="DQ_Status" expression="row1.DQ_Status " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Stewardship_Status" expression="row1.Stewardship_Status " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Source" expression="&quot;Loyalty Member&quot;" type="id_String" nullable="true"/>
+        <mapperTableEntries name="istarget" expression="false" type="id_Boolean" nullable="true"/>
+      </outputTables>
+      <outputTables sizeState="INTERMEDIATE" name="DB_Status">
+        <mapperTableEntries name="MDMLandingId" expression="row1.MDMLandingId " type="id_Integer"/>
+        <mapperTableEntries name="Stewardship_Status" expression="&quot;DQIssue_Pending&quot;" type="id_String" nullable="true"/>
+      </outputTables>
+      <inputTables sizeState="INTERMEDIATE" name="row1" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+        <mapperTableEntries name="MDMLandingId" type="id_Integer"/>
+        <mapperTableEntries name="ID" type="id_String" nullable="true"/>
+        <mapperTableEntries name="FIRST_NAME" type="id_String" nullable="true"/>
+        <mapperTableEntries name="MIDDLE_NAME" type="id_String" nullable="true"/>
+        <mapperTableEntries name="LAST_NAME" type="id_String" nullable="true"/>
+        <mapperTableEntries name="DATE_OF_BIRTH" type="id_Date" nullable="true"/>
+        <mapperTableEntries name="EMAIL_ADDRESS" type="id_String" nullable="true"/>
+        <mapperTableEntries name="STREET_ADDRESS_1" type="id_String" nullable="true"/>
+        <mapperTableEntries name="STREET_ADDRESS_2" type="id_String" nullable="true"/>
+        <mapperTableEntries name="CITY" type="id_String" nullable="true"/>
+        <mapperTableEntries name="STATE" type="id_String" nullable="true"/>
+        <mapperTableEntries name="POSTAL_CODE" type="id_String" nullable="true"/>
+        <mapperTableEntries name="ZIP_EXTENTION" type="id_String" nullable="true"/>
+        <mapperTableEntries name="COUNTRY_CODE" type="id_String" nullable="true"/>
+        <mapperTableEntries name="REGION" type="id_String" nullable="true"/>
+        <mapperTableEntries name="GENDER" type="id_String" nullable="true"/>
+        <mapperTableEntries name="EMAIL_IS_VERIFIED" type="id_String" nullable="true"/>
+        <mapperTableEntries name="MOBILE_NUMBER" type="id_String" nullable="true"/>
+        <mapperTableEntries name="DATE_MOBILE_VERIFIED" type="id_String" nullable="true"/>
+        <mapperTableEntries name="DATE_CREATED" type="id_String" nullable="true"/>
+        <mapperTableEntries name="IS_ACTIVE" type="id_String" nullable="true"/>
+        <mapperTableEntries name="HASH_ALGORITHM" type="id_String" nullable="true"/>
+        <mapperTableEntries name="DQ_Status" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Stewardship_Status" type="id_String" nullable="true"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="320">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_1" show="false"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY" show="false"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_KfCGMJTAEeeTcLbbFgJsVg" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5" show="false"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tMysqlConnection_1"/>
+    <elementParameter field="TEXT" name="TYPE" value="MYSQL" show="false"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;localhost&quot;" show="false"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;dv_staging&quot;" show="false"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;root&quot;" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="ej2GH6Qe2Gl1f7BnPxhY1w==" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;consumer_staging&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
+    <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA_REJECT:REPOSITORY_SCHEMA_TYPE" value="_KfCGMJTAEeeTcLbbFgJsVg - consumer_staging" show="false"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime" show="false"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false" show="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="mysql_id" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;noDatetimeStringSync=true&quot;" show="false"/>
+    <elementParameter field="CHECK" name="EXTENDINSERT" value="true"/>
+    <elementParameter field="LABEL" name="NOTE" value="(Not compatible with reject links)"/>
+    <elementParameter field="TEXT" name="NB_ROWS_PER_INSERT" value="100"/>
+    <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true" show="false"/>
+    <elementParameter field="TEXT" name="BATCH_SIZE" value="10000" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000" show="false"/>
+    <elementParameter field="TABLE" name="ADD_COLS"/>
+    <elementParameter field="CHECK" name="USE_FIELD_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="FIELD_OPTIONS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="MDMLandingId"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Stewardship_Status"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
+    <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
+    <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
+    <elementParameter field="CHECK" name="ON_DUPLICATE_KEY_UPDATE" value="false"/>
+    <elementParameter field="TABLE" name="DUPLICATED_KEYS" show="false"/>
+    <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="consumer_staging" name="tMysqlOutput_1">
+      <column comment="" key="true" length="10" name="MDMLandingId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="Stewardship_Status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <additionalProperties key="Comment" value=""/>
+    </metadata>
+    <metadata connector="REJECT" label="consumer_staging" name="REJECT">
+      <column comment="" key="true" length="10" name="MDMLandingId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="Stewardship_Status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <additionalProperties key="Comment" value=""/>
+    </metadata>
+  </node>
+  <node componentName="tStewardshipTaskOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="544" posY="224">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tStewardshipTaskOutput_1" show="false"/>
+    <elementParameter field="TEXT" name="URL" value="&quot;http://localhost:8180/talendmdm/services/dsctaskloader&quot;"/>
+    <elementParameter field="TEXT" name="USERNAME" value="&quot;administrator&quot;"/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="fmyLBcXusWxdAhEGcREikA=="/>
+    <elementParameter field="TEXT" name="TASKNAME" value="&quot;taskname&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="TASKTYPE" value="2"/>
+    <elementParameter field="TEXT" name="CREATED_BY" value="&quot;administrator&quot;"/>
+    <elementParameter field="TEXT" name="OWNER" value="&quot;owner&quot;"/>
+    <elementParameter field="TEXT" name="STAR_RANKING" value="0"/>
+    <elementParameter field="TEXT" name="TAGS" value="&quot;Loyalty_Member&quot;"/>
+    <elementParameter field="PREV_COLUMN_LIST" name="LOOPING_COLUMN" value="MDMLandingId" show="false"/>
+    <elementParameter field="PREV_COLUMN_LIST" name="RECORD_TYPE" value="istarget"/>
+    <elementParameter field="PREV_COLUMN_LIST" name="SOURCE" value="Source"/>
+    <elementParameter field="PREV_COLUMN_LIST" name="SCORE" value="MDMLandingId" show="false"/>
+    <elementParameter field="PREV_COLUMN_LIST" name="WEIGHTS" value="MDMLandingId" show="false"/>
+    <elementParameter field="TABLE" name="EXTRA_INFO"/>
+    <elementParameter field="TABLE" name="RECORD_COLUMN">
+      <elementValue elementRef="CONTENT" value="MDMLandingId"/>
+      <elementValue elementRef="CONTENT" value="ID"/>
+      <elementValue elementRef="CONTENT" value="FIRST_NAME"/>
+      <elementValue elementRef="CONTENT" value="MIDDLE_NAME"/>
+      <elementValue elementRef="CONTENT" value="LAST_NAME"/>
+      <elementValue elementRef="CONTENT" value="DATE_OF_BIRTH"/>
+      <elementValue elementRef="CONTENT" value="EMAIL_ADDRESS"/>
+      <elementValue elementRef="CONTENT" value="STREET_ADDRESS_1"/>
+      <elementValue elementRef="CONTENT" value="STREET_ADDRESS_2"/>
+      <elementValue elementRef="CONTENT" value="CITY"/>
+      <elementValue elementRef="CONTENT" value="STATE"/>
+      <elementValue elementRef="CONTENT" value="POSTAL_CODE"/>
+      <elementValue elementRef="CONTENT" value="ZIP_EXTENTION"/>
+      <elementValue elementRef="CONTENT" value="COUNTRY_CODE"/>
+      <elementValue elementRef="CONTENT" value="REGION"/>
+      <elementValue elementRef="CONTENT" value="GENDER"/>
+      <elementValue elementRef="CONTENT" value="EMAIL_IS_VERIFIED"/>
+      <elementValue elementRef="CONTENT" value="MOBILE_NUMBER"/>
+      <elementValue elementRef="CONTENT" value="DATE_MOBILE_VERIFIED"/>
+      <elementValue elementRef="CONTENT" value="DATE_CREATED"/>
+      <elementValue elementRef="CONTENT" value="IS_ACTIVE"/>
+      <elementValue elementRef="CONTENT" value="HASH_ALGORITHM"/>
+      <elementValue elementRef="CONTENT" value="DQ_Status"/>
+      <elementValue elementRef="CONTENT" value="Stewardship_Status"/>
+      <elementValue elementRef="CONTENT" value="Source"/>
+      <elementValue elementRef="CONTENT" value="istarget"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="NB_TASKS_PER_COMMIT" value="50"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tStewardshipTaskOutput_1">
+      <column comment="" key="true" length="10" name="MDMLandingId" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="ID" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="FIRST_NAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="MIDDLE_NAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="LAST_NAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="19" name="DATE_OF_BIRTH" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATETIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="EMAIL_ADDRESS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="STREET_ADDRESS_1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="STREET_ADDRESS_2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="CITY" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="STATE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="POSTAL_CODE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="0" name="ZIP_EXTENTION" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="COUNTRY_CODE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="255" name="REGION" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="GENDER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="EMAIL_IS_VERIFIED" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="MOBILE_NUMBER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="DATE_MOBILE_VERIFIED" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="DATE_CREATED" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="IS_ACTIVE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="HASH_ALGORITHM" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="DQ_Status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="Stewardship_Status" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="-1" name="Source" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="istarget" nullable="true" pattern="" precision="-1" sourceType="" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMysqlConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="64">
@@ -440,9 +657,17 @@
     <elementParameter field="TEXT" name="LABEL" value="consumer_staging"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tMysqlInput_1" offsetLabelX="0" offsetLabelY="0" source="tMysqlInput_1" target="tLogRow_1">
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tMysqlInput_1" offsetLabelX="0" offsetLabelY="0" source="tMysqlInput_1" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="Stewardship" lineStyle="0" metaname="Stewardship" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tMap_1" target="tStewardshipTaskOutput_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="Stewardship" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="DB_Status" lineStyle="0" metaname="DB_Status" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMap_1" target="tMysqlOutput_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="DB_Status" show="false"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tMysqlConnection_1" offsetLabelX="0" offsetLabelY="0" source="tMysqlConnection_1" target="tMysqlInput_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk1" show="false"/>
