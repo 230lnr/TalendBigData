@@ -526,7 +526,7 @@
     <nodeData xsi:type="MapperData">
       <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var">
-        <mapperTableEntries name="ConsumerHub_HashKey" expression="java.util.UUID.nameUUIDFromBytes(row1.ID.getBytes()).toString() " type="id_String"/>
+        <mapperTableEntries name="ConsumerHub_HashKey" expression="java.util.UUID.nameUUIDFromBytes(row1.ConsumerID.getBytes()).toString() " type="id_String"/>
         <mapperTableEntries name="ConsumerSatellite_Info" expression="row1.Name " type="id_String"/>
         <mapperTableEntries name="ConsumerSatelite_HasKey" expression="java.util.UUID.nameUUIDFromBytes(Var.ConsumerSatellite_Info.getBytes()).toString() " type="id_String"/>
         <mapperTableEntries name="AddressSatelite_Info" expression="row1.Address+&quot;&quot;+row1.City+&quot;&quot;+row1.State+&quot;&quot;+row1.Zip+&quot;&quot;+row1.Country " type="id_String"/>
@@ -535,7 +535,7 @@
         <mapperTableEntries name="EmailHub_Satelite_HashKey" expression="Var.Email ==null || Var.Email.trim().isEmpty()?null:java.util.UUID.nameUUIDFromBytes(Var.Email.getBytes()).toString(); " type="id_String"/>
       </varTables>
       <outputTables sizeState="INTERMEDIATE" name="ConsumerHub">
-        <mapperTableEntries name="ID" expression="row1.ID " type="id_String" nullable="true"/>
+        <mapperTableEntries name="ID" expression="row1.ConsumerID " type="id_String" nullable="true"/>
         <mapperTableEntries name="HashKey" expression="Var.ConsumerHub_HashKey " type="id_String"/>
         <mapperTableEntries name="DataloadID" expression="TalendDate.getDate(&quot;CCYYMMDDhhmmss&quot;)+&quot;|Ecomm&quot;+Var.ConsumerHub_HashKey " type="id_String" nullable="true"/>
         <mapperTableEntries name="RecordSource" expression="&quot;Ecomm&quot;" type="id_String" nullable="true"/>
