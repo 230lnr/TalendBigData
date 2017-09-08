@@ -616,7 +616,7 @@
       <uiProperties shellMaximized="true"/>
       <varTables sizeState="INTERMEDIATE" name="Var">
         <mapperTableEntries name="ConsumerHub_HashKey" expression="java.util.UUID.nameUUIDFromBytes(row1.ID.getBytes()).toString() " type="id_String"/>
-        <mapperTableEntries name="ConsumerSatellite_Info" expression="row1.Name " type="id_String"/>
+        <mapperTableEntries name="ConsumerSatellite_Info" expression="row1.Name +&quot;&quot;+row1.Gender" type="id_String"/>
         <mapperTableEntries name="ConsumerSatelite_HasKey" expression="java.util.UUID.nameUUIDFromBytes(Var.ConsumerSatellite_Info.getBytes()).toString() " type="id_String"/>
         <mapperTableEntries name="AddressSatelite_Info" expression="row1.AddressLine+&quot;&quot;+row1.City+&quot;&quot;+row1.State+&quot;&quot;+row1.Zip+&quot;&quot;+row1.Country " type="id_String"/>
         <mapperTableEntries name="AddressHub_Satellite_HashKey" expression="java.util.UUID.nameUUIDFromBytes(Var.AddressSatelite_Info.getBytes()).toString() " type="id_String"/>
@@ -640,7 +640,7 @@
         <mapperTableEntries name="MIDDLE_NAME" expression="null" type="id_String" nullable="true"/>
         <mapperTableEntries name="LAST_NAME" expression="null" type="id_String" nullable="true"/>
         <mapperTableEntries name="DATE_OF_BIRTH" expression="row1.BirthDate " type="id_String" nullable="true"/>
-        <mapperTableEntries name="GENDER" expression="null" type="id_String" nullable="true"/>
+        <mapperTableEntries name="GENDER" expression="row1.Gender" type="id_String" nullable="true"/>
         <mapperTableEntries name="DATE_CREATED" expression="null" type="id_String" nullable="true"/>
         <mapperTableEntries name="IS_ACTIVE" expression="null" type="id_String" nullable="true"/>
       </outputTables>
@@ -657,8 +657,8 @@
       </outputTables>
       <outputTables sizeState="INTERMEDIATE" name="AddressSatelite">
         <mapperTableEntries name="HashKey" expression="Var.AddressHub_Satellite_HashKey " type="id_String"/>
-        <mapperTableEntries name="STREET_ADDRESS_1" expression="row1.Address " type="id_String" nullable="true"/>
-        <mapperTableEntries name="STREET_ADDRESS_2" expression="" type="id_String" nullable="true"/>
+        <mapperTableEntries name="STREET_ADDRESS_1" expression="row1.AddressLine " type="id_String" nullable="true"/>
+        <mapperTableEntries name="STREET_ADDRESS_2" expression="null" type="id_String" nullable="true"/>
         <mapperTableEntries name="CITY" expression="row1.City" type="id_String" nullable="true"/>
         <mapperTableEntries name="STATE" expression="row1.State" type="id_String" nullable="true"/>
         <mapperTableEntries name="POSTAL_CODE" expression="row1.Zip" type="id_String" nullable="true"/>
@@ -678,7 +678,7 @@
       </outputTables>
       <outputTables sizeState="INTERMEDIATE" name="EmailSatelite" expressionFilter="Var.EmailHub_Satelite_HashKey != null">
         <mapperTableEntries name="HashKey" expression="Var.EmailHub_Satelite_HashKey " type="id_String"/>
-        <mapperTableEntries name="EMAIL_ADDRESS" expression="row1.Email1" type="id_String" nullable="true"/>
+        <mapperTableEntries name="EMAIL_ADDRESS" expression="row1.Email" type="id_String" nullable="true"/>
         <mapperTableEntries name="EMAIL_IS_VERIFIED" expression="null" type="id_String" nullable="true"/>
       </outputTables>
       <outputTables sizeState="INTERMEDIATE" name="ConsumerAddressLink" minimized="true">
