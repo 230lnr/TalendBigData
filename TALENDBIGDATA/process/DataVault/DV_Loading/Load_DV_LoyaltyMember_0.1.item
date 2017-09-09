@@ -448,7 +448,7 @@
         <mapperTableEntries name="EmailHub_Satelite_HashKey" expression="Var.Email ==null || Var.Email.trim().isEmpty()?null:java.util.UUID.nameUUIDFromBytes(Var.Email.getBytes()).toString(); " type="id_String"/>
       </varTables>
       <outputTables sizeState="INTERMEDIATE" name="ConsumerHub">
-        <mapperTableEntries name="ID" expression="row1.ID " type="id_String" nullable="true"/>
+        <mapperTableEntries name="ID" expression="&quot;LOYALTY_MEMBER|&quot;+row1.ID " type="id_String" nullable="true"/>
         <mapperTableEntries name="HashKey" expression="Var.ConsumerHub_HashKey " type="id_String"/>
         <mapperTableEntries name="DataloadID" expression="TalendDate.getDate(&quot;CCYYMMDDhhmmss&quot;)+&quot;|LOYALTY_MEMBER&quot;+Var.ConsumerHub_HashKey " type="id_String" nullable="true"/>
         <mapperTableEntries name="RecordSource" expression="&quot;LOYALTY_MEMBER&quot;" type="id_String" nullable="true"/>
