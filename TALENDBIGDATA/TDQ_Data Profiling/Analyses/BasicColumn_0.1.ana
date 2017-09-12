@@ -1,20 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataquality.analysis:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.indicators.columnset="http://dataquality.indicators.columnset" xmi:id="_b9R38JfwEeeTcLbbFgJsVg" name="BasicColumn" creationDate="2017-09-12T12:27:36.599-0700">
-  <taggedValue xmi:id="_b9R38ZfwEeeTcLbbFgJsVg" tag="Status" value="development"/>
-  <taggedValue xmi:id="_b9R38pfwEeeTcLbbFgJsVg" tag="Author" value="lnr@artha.com"/>
-  <taggedValue xmi:id="_b9R385fwEeeTcLbbFgJsVg" tag="Purpose"/>
-  <taggedValue xmi:id="_b9R39JfwEeeTcLbbFgJsVg" tag="Description"/>
-  <taggedValue xmi:id="_b9R39ZfwEeeTcLbbFgJsVg" tag="Version" value="0.1"/>
-  <context xmi:id="_b9R39pfwEeeTcLbbFgJsVg"/>
-  <results xmi:id="_b9R395fwEeeTcLbbFgJsVg">
-    <resultMetadata xmi:id="_b9R3-JfwEeeTcLbbFgJsVg"/>
-    <indicators xsi:type="dataquality.indicators.columnset:SimpleStatIndicator" xmi:id="_b9R3-ZfwEeeTcLbbFgJsVg">
-      <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Multiple_Column_Simple_Statistics_0.1.definition#_JoeMkM-jEd6qN5aKpPNGTg"/>
-      <rowCountIndicator xmi:id="_b9XXgJfwEeeTcLbbFgJsVg"/>
-      <uniqueCountIndicator xmi:id="_b9XXgZfwEeeTcLbbFgJsVg"/>
-      <distinctCountIndicator xmi:id="_b9XXgpfwEeeTcLbbFgJsVg"/>
-      <duplicateCountIndicator xmi:id="_b9XXg5fwEeeTcLbbFgJsVg"/>
-    </indicators>
-  </results>
-  <parameters xmi:id="_b9XXhJfwEeeTcLbbFgJsVg" analysisType="Column Set Analysis"/>
-</dataquality.analysis:Analysis>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:dataquality.indicators.columnset="http://dataquality.indicators.columnset" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
+  <dataquality.analysis:Analysis xmi:id="_b9R38JfwEeeTcLbbFgJsVg" name="BasicColumn" creationDate="2017-09-12T12:27:36.599-0700" defaultContext="Default">
+    <clientDependency href="../../metadata/connections/DV_Landing_0.1.item#_cd4qoJfwEeeTcLbbFgJsVg"/>
+    <taggedValue xmi:id="_b9R38ZfwEeeTcLbbFgJsVg" tag="Status" value="development"/>
+    <taggedValue xmi:id="_b9R38pfwEeeTcLbbFgJsVg" tag="Author" value="lnr@artha.com"/>
+    <taggedValue xmi:id="_b9R385fwEeeTcLbbFgJsVg" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_b9R39JfwEeeTcLbbFgJsVg" tag="Description" value=""/>
+    <taggedValue xmi:id="_b9R39ZfwEeeTcLbbFgJsVg" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_cdpaEZfwEeeTcLbbFgJsVg" tag="ANA_LAST_RUN_CONTEXT" value="Default"/>
+    <taggedValue xmi:id="_cdpaEpfwEeeTcLbbFgJsVg" tag="PREVIEW_ROW_NUMBER" value="50"/>
+    <taggedValue xmi:id="_cd4qoZfwEeeTcLbbFgJsVg" tag="Is Use Sample Data" value="false"/>
+    <taggedValue xmi:id="_cd5RsJfwEeeTcLbbFgJsVg" tag="NUMBER_OF_CONNECTIONS_PER_ANALYSIS" value="5"/>
+    <context xmi:id="_b9R39pfwEeeTcLbbFgJsVg">
+      <connection href="../../metadata/connections/DV_Landing_0.1.item#_U19UYJTZEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6FQ5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6FR5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6FS5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6FT5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6FU5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6FV5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6FW5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6FX5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6FY5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6FZ5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fa5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fb5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fc5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fd5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fe5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Ff5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fg5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fh5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fi5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fj5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fk5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fl5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fm5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fn5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fo5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fp5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fq5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fr5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fs5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Ft5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fu5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fv5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fw5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fx5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fy5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fz5TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6F05TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6F15TcEeeTcLbbFgJsVg"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6F25TcEeeTcLbbFgJsVg"/>
+    </context>
+    <results xmi:id="_b9R395fwEeeTcLbbFgJsVg">
+      <resultMetadata xmi:id="_b9R3-JfwEeeTcLbbFgJsVg"/>
+      <indicators xsi:type="dataquality.indicators.columnset:SimpleStatIndicator" xmi:id="_b9R3-ZfwEeeTcLbbFgJsVg">
+        <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Multiple_Column_Simple_Statistics_0.1.definition#_JoeMkM-jEd6qN5aKpPNGTg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6FQ5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6FR5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6FS5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6FT5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6FU5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6FV5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6FW5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6FX5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6FY5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6FZ5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fa5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fb5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fc5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fd5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fe5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Ff5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fg5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fh5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fi5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fj5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fk5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fl5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fm5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fn5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fo5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fp5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fq5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fr5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fs5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Ft5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fu5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fv5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fw5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fx5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fy5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6Fz5TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6F05TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6F15TcEeeTcLbbFgJsVg"/>
+        <analyzedColumns xsi:type="relational:TdColumn" href="../../metadata/connections/DV_Landing_0.1.item#_dm6F25TcEeeTcLbbFgJsVg"/>
+        <rowCountIndicator xmi:id="_b9XXgJfwEeeTcLbbFgJsVg">
+          <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Row_Count_0.1.definition#_ccFOkBF2Ed2PKb6nEJEvhw"/>
+        </rowCountIndicator>
+        <uniqueCountIndicator xmi:id="_b9XXgZfwEeeTcLbbFgJsVg">
+          <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Unique_Count_0.1.definition#_ccHq0RF2Ed2PKb6nEJEvhw"/>
+        </uniqueCountIndicator>
+        <distinctCountIndicator xmi:id="_b9XXgpfwEeeTcLbbFgJsVg">
+          <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Distinct_Count_0.1.definition#_ccHq0BF2Ed2PKb6nEJEvhw"/>
+        </distinctCountIndicator>
+        <duplicateCountIndicator xmi:id="_b9XXg5fwEeeTcLbbFgJsVg">
+          <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Simple Statistics/Duplicate_Count_0.1.definition#_ccHq0hF2Ed2PKb6nEJEvhw"/>
+        </duplicateCountIndicator>
+      </indicators>
+    </results>
+    <parameters xmi:id="_b9XXhJfwEeeTcLbbFgJsVg" dataFilter="_coW1QJfwEeeTcLbbFgJsVg" analysisType="Column Set Analysis"/>
+    <contextType xmi:id="_cdpaEJfwEeeTcLbbFgJsVg" confirmationNeeded="false" name="Default"/>
+  </dataquality.analysis:Analysis>
+  <dataquality.domain:Domain xmi:id="_coW1QJfwEeeTcLbbFgJsVg" name="BasicColumn">
+    <ranges xmi:id="_coafoJfwEeeTcLbbFgJsVg">
+      <expressions xmi:id="_coafoZfwEeeTcLbbFgJsVg">
+        <expression xsi:type="relational:TdExpression" xmi:id="_coafopfwEeeTcLbbFgJsVg" body="" language="SQL"/>
+      </expressions>
+    </ranges>
+  </dataquality.domain:Domain>
+</xmi:XMI>
